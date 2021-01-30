@@ -1,0 +1,634 @@
+/* INSERT FONT-FAMILY */
+@font-face {
+  font-family: 'cube-font';
+  /* src: url('file:///C:/Users/nicol/OneDrive/Dokumente/GitHub/website/cube/self-build/fonts/strokeWeight-080/font.woff2')
+       format('woff2'),
+       url('file:///C:/Users/nicol/OneDrive/Dokumente/GitHub/website/cube/self-build/fonts/strokeWeight-080/font.woff'),
+       format('woff'); */
+  src: url('/css/webfonts/font_file/font.woff') format('woff');
+       /* url(font.woff2) format('woff2'); */
+  /* font-weight: 80;
+  font-style: normal; */
+}
+
+/* GENERAL STYLES
+   ================================== */
+/* DROPWDOWN */
+/* VARS
+  ============================== */
+
+:root {
+  /* COLORS */
+  --base-color: #2196F3;
+  --baseBg: #eeeeee;
+  --lightBg: #fafafa;
+  --lightBlue: #03A9F4;
+  --lightGrey: #727272;
+  --textColor: #222222;
+  --highlightInput: #5264AE;
+  --backgroundSecInput: #d7cac1;
+
+  --fontColorBody: #1d1d1e;
+  --fontColorForm: #999;
+
+    /* DROPDOWN STYLING */
+    --select-border: var(--highlightInput);
+    --select-focus: red;
+    --select-arrow: var(--select-border)
+
+  /* SIZES */
+  --baseFontSize:   16px;
+  --fontSizeForm : 1em;
+
+  /* FONT-FAMILY */
+  --baseFontFamily: 'cube-font', sans-serif;
+
+  /* LAYOUT */
+  --baseLineHeight:  2.35;
+  --borderRadius:    5px;
+  --borderRadiusButton: 3px;
+  /* variable for number of list elements */
+  --lengtOfListElements:   5;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+}
+
+body {
+  font-family: 'cube-font';
+  font-size: 2em;
+  color: var(--fontColorBody);
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+}
+
+
+h1 {
+  font-size:1.75em;
+  color:  var(--lightBg);
+  margin: 0;
+  padding: 0.15em;
+  position: relative;
+  top: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#logo {
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-family: 'cube-font';
+  font-size: 2em;
+}
+
+h3 {
+  font-family: 'cube-font';
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.cube-logo-font {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+
+section {
+  /* width: 100%; */
+  min-height: 100px;
+}
+
+/*
+========================
+    FIRST PAGE
+    - LANDING PAGE
+======================== */
+
+section.landing {
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+/* BACKGROUND */
+.landing-background-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('/bilder/road-381227_1920.jpg');
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* add blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.grid-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+  'top top top top top'
+  '. logo logo logo .'
+  '. main main main .'
+  'footer footer footer footer footer'
+  'blank . . . .';
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 3fr 0.5fr 1fr;
+  padding: 10px;
+}
+
+  .style {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border: 2px solid yellow;
+  }
+
+  .grid-logo {
+    grid-area: logo;
+  }
+
+  .grid-image {
+    grid-area: main;
+  }
+
+  .grid-text {
+    grid-area: footer;
+  }
+
+  .grid-blank {
+    grid-area: blank;
+  }
+
+    /* cube image */
+    #cube {
+      position: absolute;
+      padding-top: 70%;
+      width: 100%;
+      padding: 0;
+    }
+
+    /* car image */
+    img#car {
+      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+  .container-cube-logo {
+    display: flex;
+    text-align: center;
+  }
+
+    .container-cube-logo-item {
+      flex: 1;
+      display: inline-block;
+      color: #363739;
+      text-transform: uppercase;
+    }
+
+    .cube-c {
+      transform: rotate(15deg) scaleY(2.5);
+      /* moves the block up */
+      margin-block: -9px;
+    }
+    .cube-u {
+      transform: rotate(6deg) scaleY(2.7);
+    }
+    .cube-b {
+      transform: rotate(-6deg) scaleY(2.7);
+    }
+    .cube-e {
+      transform: rotate(-15deg) scaleY(2.5);
+      /* moves the block up */
+      margin-block: -9px;
+    }
+
+/* SITE TWO */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  text-align: left;
+  align-self: center;
+}
+
+.input-form {
+  background-color: var(--backgroundSecInput);
+  /* font-size: 1.2em; */
+}
+
+.section-content {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+/* seperate contact from Text before */
+.seperator {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+/* creates an psyeudo-element after the h4 */
+.seperator h4:after {
+  /* without this the element won't work */
+  content: "";
+  /* puts the psyeudo element on it's own line */
+  display: block;
+  /* centers the border */
+  margin: 0 auto;
+  width: 20%;
+  padding-top: 10px;
+  border-bottom: 2px solid black;
+}
+
+
+/* ---- SURVEY FORM ---- */
+#contact-form {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 90%;
+  color: var(--fontColorForm);
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position:relative;
+  margin-bottom:35px;
+}
+
+input {
+  font-size: var(--fontSizeForm);
+  padding:10px 10px 10px 5px;
+  display:block;
+  width: 100%;
+  background: transparent;
+  border:none;
+  border-bottom: 3px solid #757575;
+}
+
+input:focus {
+  outline:none;
+}
+
+/* LABEL ======================================= */
+label 				 {
+  font-size:var(--fontSizeForm);
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color: var(--highlightInput);
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{
+  position:relative;
+  display:block;
+  width:40%;
+}
+
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background: var(--highlightInput);
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:100%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* DROPDOWN
+   ================================== */
+:root {
+ --select-border: #777;
+ --select-focus: blue;
+ --select-arrow: var(--select-border);
+}
+
+.select {
+  width: 97.5%;
+  border: 1px solid var(--select-border);
+  border-radius: var(--borderRadius);
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: transparent;
+  /* background-image: linear-gradient(to top, #f9f9f9, #fff 33%); */
+
+  /* makes the arrow visible */
+  display: grid;
+  grid-template-areas: "select";
+
+  align-items: center;
+
+  position: relative;
+}
+
+select {
+  /* // A reset of styles, including removing the default dropdown arrow */
+  appearance: none;
+  /* // Additional resets for further consistency */
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  font-family: var(--baseFontFamily);
+  font-size: var(--fontSizeForm);
+
+  color: var(--fontColorForm);
+  background-color: transparent;
+
+  outline: none;
+}
+
+/* remove arrow for lower IE versions */
+select::-ms-expand {
+  display: none;
+}
+
+/* aligns the arrow to the right side */
+.select:after {
+  justify-self: end;
+}
+
+/* defines the arrow */
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+/* puts both select and .select at the same layout
+   works like position: absolute */
+select,
+.select:after {
+  grid-area: select;
+}
+
+/* adds the .focus span to the select markup */
+select:focus + .focus {
+  color: yellow;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--highlightInput);
+  border-radius: inherit;
+}
+
+.select:focus {
+  border: 2px solid var(--highlightInput);
+  color: var(--fontColorBody);
+}
+
+
+/* COMMENT
+================================== */
+textarea {
+  padding: 5%;
+  width: 92.5%;
+  border-radius: var(--borderRadius);
+  font-size: var(--fontSizeForm);
+  color: var(--fontColorForm);
+  overflow: auto;
+}
+
+  #comment {
+    border: 2px solid;
+    /* takes the color of the parent */
+    border-color: inherit;
+    font-family: 'cube-font';
+    background-color: transparent;
+    min-height: 200px;
+  }
+
+  #comment:focus {
+    border: 2px solid var(--highlightInput);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    color: var(--fontColorBody);
+  }
+
+
+/* BUTTON */
+button {
+  margin-left: 5%;
+  background-color: #454753;
+  color: white;
+  padding: 2.5% 7.5%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border: none;
+  border-radius: var(--borderRadiusButton);
+  font-size: var(--baseFontSize);
+  transition: all 1s ease;
+}
+
+button:hover {
+  background-color: black;
+}
+
+button:before {
+  content:'';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  transition: all 2s ease;
+}
+
+button:active:before {
+  height: 42px;
+}
+
+/* FOOTER  */
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e2032;
+  color: white;
+  font-size: 10pt;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.container-footer {
+}
+
+.inner-container-footer {
+  display: block;
+}
+
+.inner-container-footer p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-footer {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+#icon-camper {
+  display: block;
+  max-height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+#icon-astronut {
+  display: block;
+  max-height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* adds a transparent border, through This
+   the hover effect does NOT MOVE the element
+   when the underline effect is shown */
+.link-hover {
+  border-bottom: 1px dashed transparent;
+}
+
+.link-hover:hover {
+  border-bottom: 1px dashed yellow;
+}
+
+
+/* MEDIA QUERYs */
+@media (min-width: 600px) {
+  /* LANDING */
+  .grid-container {
+    grid-template-areas:
+      'top top top top top'
+      '. logo logo logo .'
+      '. main main main .'
+      'footer footer footer footer footer'
+      'blank blank blank . .';
+    grid-template-rows: 1fr 1fr 2fr 1fr 0.5fr;
+  }
+}
+
+@media (min-width: 900px) {
+  /* LANDING */
+  .grid-container {
+    grid-template-areas:
+    'logo nav nav nav nav'
+    '. main main main .'
+    '. main main main .'
+    '. footer footer footer .'
+    'blank blank blank blank blank';
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
+  }
+
+@media (min-width: 2000px) {
+  /* LANDING */
+  .grid-container {
+    grid-template-areas:
+    'logo nav nav nav nav'
+    '. . main . .'
+    '. . main . .'
+    '. footer footer footer .'
+    'blank blank blank blank blank';
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
+  }
+
+  /* FOOTER */
+  footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10%;
+  }
+}
