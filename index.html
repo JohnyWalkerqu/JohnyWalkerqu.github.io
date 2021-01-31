@@ -12,13 +12,12 @@
       <div class="landing-background-image"></div>
       <div class="grid-container">
         <div class="grid-logo style">
-          Logo
-          <img id="logo" src="/Logo/A_cube_Logo_RGB.png" alt="Logo Cube">
+          <img id="logo" class="logo" src="/Logo/A_cube_Logo_RGB.png" alt="Logo Cube">
         </div>
-        <div class="grid-image style">image
+        <div class="grid-image style">
           <img id="car" src="/bilder/Pickup-mit-Cube-4-cube_logo.png" alt="Pickup with Cube">
         </div>
-        <div class="grid-text style">text
+        <div class="grid-text style">
           <div class="container-cube-logo grid-logo-font">
             <div class="container-cube-logo-item cube-c"><span id="cube-logo-special-c">c</span></div>
             <div class="container-cube-logo-item cube-u"><span id="cube-logo-special-u">u</span></div>
@@ -26,7 +25,7 @@
             <div class="container-cube-logo-item cube-e"><span id="cube-logo-special-e">e</span></div>
           </div>
         </div>
-        <div class="grid-blank style">blank</div>
+        <div class="grid-blank style"></div>
       </div>
     </section>
 
@@ -70,7 +69,8 @@
 
               <!-- Input Adress -->
               <div class="group">
-                <input type="text" name="adress" id="adress">
+                <!-- TODO: only works correctly on required -->
+                <input type="text" name="adress" id="adress" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>Adress</label>
@@ -106,12 +106,11 @@
               <textarea name="comment" id="comment"
                 placeholder="Enter your comment here..."></textarea>
             </div>
-            <br>
             <!-- TODO: pop-up info, if send worked correctly -->
             <!-- TODO: show it in console -->
             <!-- TODO: send to an email-adress first -->
             <div class="form-group">
-              <button id="submit" class="submit-button" type="submit" value="submit">Submit</button>
+              <button id="submit" class="submit-button" type="submit" value="submit">Send</button>
             </div>
           </form>
       </div>
