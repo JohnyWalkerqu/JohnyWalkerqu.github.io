@@ -743,7 +743,7 @@ footer {
   /* LANDING */
   .grid-container {
     grid-template-areas:
-      'top top top top top'
+      'nav . . . .'
       '. logo logo logo .'
       '. main main main .'
       'footer footer footer footer footer'
@@ -756,7 +756,7 @@ footer {
   /* LANDING */
   .grid-container {
     grid-template-areas:
-    'logo nav nav nav nav'
+    'nav logo logo logo logo'
     '. main main main .'
     '. main main main .'
     '. footer footer footer .'
@@ -779,7 +779,7 @@ footer {
   /* LANDING */
   .grid-container {
     grid-template-areas:
-    'logo nav nav nav nav'
+    'nav logo logo . .'
     '. . main . .'
     '. . main . .'
     '. footer footer footer .'
