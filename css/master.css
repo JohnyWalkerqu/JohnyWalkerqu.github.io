@@ -222,7 +222,7 @@ section.landing {
 
     nav .menu-btn {
         position: absolute;
-        top: 10%;
+        top: 5%;
         right: 5%;
         padding: 0;
         width: 30px;
@@ -739,7 +739,8 @@ footer {
 
 
 /* MEDIA QUERYs */
-@media only screen and (min-width: 1100px) {
+/* 43em = 688px */
+@media only screen and (min-width: 43em) {
   /* LANDING */
   .grid-container {
     grid-template-areas:
@@ -752,7 +753,8 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1500px) {
+/* 62em = 992px */
+@media only screen and (min-width: 62em) {
   /* LANDING */
   .grid-container {
     grid-template-areas:
@@ -775,7 +777,8 @@ footer {
     grid-gap: 10%;
   }
 
-@media only screen and (min-width: 2000px) {
+/* 82em = 1312px */
+@media only screen and (min-width: 82em) {
   /* LANDING */
   .grid-container {
     grid-template-areas:
