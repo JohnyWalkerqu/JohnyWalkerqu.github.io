@@ -319,7 +319,7 @@ nav .nav-links .link {
   transition: all 400ms ease;
 }
 
-a.link:hover {
+a.icon-hover:hover {
     color: rgba(100, 0, 0, .3);
 }
 
@@ -343,12 +343,16 @@ nav brand (cube logo) */
 social media icons */
 nav .layout-social-media {
   position: absolute;
-  top: 90vh;
+  top: 80vh;
 }
 
 nav .social-media {
   display: flex;
   cursor: pointer;
+}
+
+nav .social-media a {
+  color: black;
 }
 /* ========= */
 
