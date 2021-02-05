@@ -436,13 +436,24 @@ add class on scroll */
 
 /* takes child of this class */
 .nav--scroll-desktop > .nav-items li {
-  filter: hue-rotate(180deg);
   border-color: var(--fontColorBody);
   color: var(--fontColorBody);
+  transition: all 800ms ease-in;
 }
 
 .nav--scroll-desktop > .nav-items a {
   color: var(--fontColorBody);
+  transition: all 800ms ease-in;
+}
+
+.nav--scroll-desktop > .nav-items li:hover {
+  background-color: var(--fontColorBody);
+  transition: all 500ms ease-in;
+}
+
+.nav--scroll-desktop > .nav-items a:hover {
+  color: white;
+  transition: all 500ms ease-in;
 }
 
 /* ===== END ===============
@@ -1124,6 +1135,15 @@ footer {
   /* ACTIVATE NAV desktop */
   .nav-desktop {
     display: flex;
+  }
+
+  /* Scroll spacing
+  to add desktop nav height*/
+
+  #about-us,
+  #contact {
+    padding-top: 15vh;
+    margin-top: -15vh;
   }
 
   #logo {
