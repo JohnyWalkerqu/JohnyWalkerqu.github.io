@@ -1142,8 +1142,8 @@ footer {
 
   #about-us,
   #contact {
-    padding-top: 15vh;
-    margin-top: -15vh;
+    scroll-margin-top: 15vh;
+    /* margin-top: -15vh; */
   }
 
   #logo {
