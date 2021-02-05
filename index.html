@@ -9,34 +9,66 @@
     <title>cube-manufaktur</title>
   </head>
   <body>
+    <header>
 
-    <!-- TODO: add something to landing page -->
-    <section id="landing" class="landing">
+    </header>
+
+    <section id="home" class="landing">
       <div class="landing-background-image"></div>
-      <div class="grid-container">
-        <nav class="grid-nav">
+      <div class="grid-nav nav-mobile">
+        <nav class="nav">
           <div class="menu-btn">
             <div class="line line--1"></div>
             <div class="line line--2"></div>
             <div class="line line--3"></div>
           </div>
-
           <div class="nav-links">
-            <a href="#landing" class="link">
+            <div class="nav-brand">
+              <a class="navbar-brand" href="#">
+                <img id="logo-navbar" src="/Logo/A_cube_Logo_RGB.png" alt="Logo Cube Navbar">
+              </a>
+            </div>
+            <a href="#home" class="link">
               <i class="bi bi-house"></i>
               Home
-              </a>
-            <a href="#about-us" class="link">
-              <i class="bi bi-app"></i>
-              About us
             </a>
-            <a href="#contact" class="link">
-              <i class="bi bi-credit-card-2-front-fill"></i>
-              Contact
+            <a href="#about-us" class="link">
+              <i><img id="cube-icon-nav" src="/Logo/Cube-Logo-Icon-Seite001.svg"
+                alt="Cube Icon"
+                type="image/x-icon"></i>
+                About us
+              </a>
+              <a href="#contact" class="link">
+                <i class="bi bi-credit-card-2-front-fill"></i>
+                Contact
+              </a>
+              <div class="layout-social-media">
+                <div class="social-media">
+                  <i class="bi bi-instagram"></i>
+                  <i class="bi bi-facebook"></i>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      <div class="grid-nav nav-desktop">
+          <div class="nav-brand-desktop">
+            <a class="navbar-brand-desktop" href="#">
+              <img
+                id="logo-navbar-desktop"
+                src="/Logo/A_cube_Logo_RGB.png"
+                alt="Logo Cube Navbar">
             </a>
           </div>
-        </nav>
-
+          <div class="nav-items">
+            <ul class="nav-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about-us">About us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+      </div>
+      <div class="grid-container">
         <div class="grid-logo style">
           <img id="logo" class="logo" src="/Logo/A_cube_Logo_RGB.png" alt="Logo Cube">
         </div>
@@ -52,6 +84,22 @@
           </div>
         </div>
         <div class="grid-blank style"></div>
+        <!-- mouse scroll -->
+        <div class="grid-scroll style">
+          <a href="#about-us">
+            <div class="mouse_scroll">
+          		<div class="mouse">
+          			<div class="wheel"></div>
+          		</div>
+          		<div>
+          			<span class="m_scroll_arrows first"></span>
+          			<span class="m_scroll_arrows second"></span>
+          			<span class="m_scroll_arrows third"></span>
+          		</div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </section>
     <section id="about-us">
@@ -81,14 +129,15 @@
                can insert your mail and further info below and we will provide you
                firsthand with product-details, behind the scenes our motivation and
                much more.</p>
-            <p>Stay excited - the <span class="cube-logo-font">cube</span>-Team.</p>
+            <p>Stay excited - the <span class="cube-logo-font">cube-team</span>.</p>
           </div>
         </div>
         <div class="seperator">
           <h4>Get in contact</h4>
         </div>
         <div class="form">
-          <form id="contact-form" name="contact-form" action="" method="post">
+          <form id="contact-form" name="contact-form" action="" method="post"
+                action="mailto:n.walk@cube-manufaktur.com">
             <div class="contact-grid">
               <!-- Input Vorname -->
               <div class="group">
