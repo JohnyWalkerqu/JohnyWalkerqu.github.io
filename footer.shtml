@@ -1,0 +1,23 @@
+<div class="inner-container-footer">
+  <p>Our partners:<p>
+  <p>
+    <span class="icon-footer">
+      <img id="icon-camper" src="/bilder/Logo_campermanufaktur-wuerzburg.png" alt="icon camper manufaktur">
+    </span>
+    <a class="link-hover" href="https://campermanufaktur-wuerzburg.de" target="_blank">campermanufaktur</a>
+  <p>
+    <span class="icon-footer">
+      <img id="icon-astronut" src="/bilder/Logo_astronut.png" alt="icon astronut">
+    </span>
+    <a class="link-hover" href="https://astronut.de" target="_blank">astronut design atelier</a>
+    <span class="link-hover-test"></span>
+</div>
+
+<div class="inner-container-footer">
+  <p>&copy; 2021 Cube
+  <p class="pre">Brand of:<a class="link-hover" href="https://schreinerei-walk.de" target="_blank"> Schreinerei Walk GmbH</a></p>
+  <p class="pre">Author: Nicolas Walk</p>
+  <p><a class="link-hover" href="https://www.schreinerei-walk.de/impressum-und-datenschutzerklaerung/" target="_blank">Impressum</a></p>
+  <p><a class="link-hover" href="/content/privacy/Impressum und Datenschutzerklärung_aktuell.html" target="_blank">Privacy</a></p>
+</div>
+</div>
