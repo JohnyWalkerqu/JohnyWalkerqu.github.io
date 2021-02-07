@@ -29,6 +29,7 @@
   --backgroundSecInput: #d7cac1;
 
   --fontColorBody: #636466;
+  --fontColorNav: #939393;
   --fontColorFooter: white;
   --fontColorLinksFooter: #fff9;
   --fontColorForm: #999;
@@ -41,7 +42,7 @@
   /* FONT SIZES */
 
   --baseFontSize: 1em;
-  --fontSizeNavDesktop: 0.8em;
+  --fontSizeNavDesktop: 0.5em;
   --fontSizeForm : 1em;
   /* size of the paragraphs */
   --fontSizeP : 0.8em;
@@ -58,7 +59,7 @@
   /* LAYOUT and RADIUS */
   --baseLineHeight:  2.35;
   /* element size nav elements desktop */
-  --layoutSizeNavDesktopElements: 1em;
+  --layoutSizeNavDesktopElements: 0.5em;
   --borderRadius: 5px;
   --borderRadiusButton: 3px;
   --borderRadiusNav: 0.5em;
@@ -415,28 +416,33 @@ nav desktop logo */
 
 .nav-items li {
   position: relative;
+  min-width: 3em;
+
   border-radius: var(--borderRadiusNav);
   list-style: none;
-  border: 3px solid white;
+  border: 3px solid var(--fontColorNav);
   /* box-shadow: 0 2px 0 rgba(0,0,0,0.4); */
-}
-
-.nav-items li:hover {
-  background-color: white;
-  transition: all 500ms ease-in;
-}
-
-.nav-items a:hover {
-  color: var(--fontColorBody);
-  transition: all 500ms ease-in;
 }
 
 .nav-items a {
   display: block;
+  min-height: 2em;
+  text-align: center;
+  color: var(--fontColorNav);
   /* sets border for underline hover effect */
   font-size: var(--fontSizeNavDesktop);
   padding: var(--layoutSizeNavDesktopElements);
   cursor: pointer;
+}
+
+.nav-items li:hover {
+  background-color: var(--fontColorNav);
+  transition: all 500ms ease-in;
+}
+
+.nav-items a:hover {
+  color: white;
+  transition: all 500ms ease-in;
 }
 
 /* NAV DESKTOP on scroll
@@ -485,14 +491,14 @@ add class on scroll */
   height: 85vh;
   display: grid;
   grid-template-areas:
-    'nav top top top top'
+    'top top top top top'
     '. logo logo logo .'
     '. main main main .'
     'footer footer footer footer footer'
     '. . blank . .';
   grid-gap: 10px;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr 3fr 0.5fr 1fr;
+  grid-template-rows: auto 1fr 3fr 0.5fr 1fr;
 }
 
   /* activate to identify grids */
