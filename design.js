@@ -69,10 +69,15 @@ menuBtn.addEventListener('click', () => {
     }
 })
 
-// // calculate for desktop
+// get the current window height with: window.innerHeight
+// calculate for desktop
 var windowHeight = window.innerHeight,
     navBarDesktopHeight = navDesktop.offsetHeight,
-    windowNavDesktopOffset = windowHeight - navBarDesktopHeight;
+    windowNavDesktopOffset = windowHeight - navBarDesktopHeight,
+
+// calculate for mobile
+    navBarMobileHeight = navDesktop.offsetHeight,
+    windowNavMobileOffset = windowHeight - navBarMobileHeight;
 
 document.addEventListener('scroll', function() {
   var scrollPosition = pageYOffset;
@@ -80,23 +85,37 @@ document.addEventListener('scroll', function() {
   // checks if the page is scrolled down
   // fires .scroll-effect to add a transition-effect
   // for a smooth background-color change
-  if (scrollPosition > 1 && scrollPosition < 20) {
-    console.log(scrollPosition);
-    navMobile.classList.toggle('scroll-effect');
-  }
 
-  // adds the background-color
-  if (scrollPosition > 1) {
-    console.log('class added: nav--scroll-desktop');
+  // if (scrollPosition > 1 && scrollPosition < 20) {
+  //   console.log(scrollPosition);
+  //   navMobile.classList.toggle('scroll-effect');
+  // }
+
+  // if (scrollPosition > windowNavDesktopOffset) {
+  //   console.log(scrollPosition + 'scrollPosition > windowNavDesktop');
+  //   navDesktop.classList.add('scroll-effect');
+  //   navDesktop.classList.add('nav--scroll-desktop');
+  //   navMobile.classList.add('nav--scroll-mobile');
+  // }
+
+  if (scrollPosition > 50) {
+    console.log(scrollPosition + 'scrollPosition > windowNavDesktop');
     navDesktop.classList.add('nav--scroll-desktop');
     navMobile.classList.add('nav--scroll-mobile');
   }
+  
+  //
+  // if (scrollPosition > 50 && scrollPosition < 51) {
+  //   navDesktop.classList.add('scroll-effect');
+  //   console.log('class .scroll-effect removed at scrollPosition: ' + scrollPosition);
+  // }
 
   // removes the background-color if the frame reaches the top level again
   else {
     console.log('class removed: nav--scroll-desktop');
     navDesktop.classList.remove('nav--scroll-desktop');
     navMobile.classList.remove('nav--scroll-mobile');
+
   }
 })
 
