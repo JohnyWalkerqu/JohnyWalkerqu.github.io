@@ -135,6 +135,10 @@ h3 {
   font-size: 1.5em;
 }
 
+h5 {
+  font-weight: unset;
+}
+
 p {
   font-size: var(--fontSizeP);
 }
@@ -1304,6 +1308,26 @@ footer {
   align-items: center;
 }
 
+/* seperate contact from Text before */
+.seperator-footer {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+/* creates an psyeudo-element after the h4 */
+.seperator-footer h5:after {
+  /* without this the element won't work */
+  content: "";
+  /* puts the psyeudo element on it's own line */
+  display: block;
+  /* centers the border */
+  margin: 0 auto;
+  width: 15%;
+  padding-top: 10px;
+  border-bottom: 2px solid yellow;
+}
+
 .link-container {
   display: flex;
   flex-direction: row;
@@ -1439,7 +1463,6 @@ header.privacy {
     grid-area: 11 / 4 / 12 / 10;
   }
 
-
   /* scroll wheel effect */
   .mouse {
     visibility: hidden;
@@ -1502,13 +1525,17 @@ header.privacy {
   /* FOOTER */
   footer {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .link-container {
+    justify-content: center;
+  }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10%;
+    grid-gap: 1px;
   }
 }
 

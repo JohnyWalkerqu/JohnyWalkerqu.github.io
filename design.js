@@ -4,19 +4,22 @@ var header = document.querySelector('header');
 
 // DISABLE RIGHT CLICK
 (function(w) {
-  var arr = ['contextmenu', 'copy', 'cut', 'paste', 'mousedown', 'mouseup',
+  var arr = ['contextmenu', 'copy', 'cut', 'paste', 'mouseup',
              'beforeunload', 'beforeprint'];
-
+  console.log(arr);
   for (var i = 0, x; x = arr[i]; i++) {
-
+    console.log(x + ' #' + i);
     if (w['on' + x])w['on' + x] = null;
-
+      console.log('true for: ' + w + w['on' + x]);
       w.addEventListener(x, function(e) {
-        e.stopPropagation()}, true);
+        console.log('addEventListener');
+        e.preventDefault()}, true);
+        // e.stopPropagation()}, true);
     };
 
   for (var j = 0, f; f = w.frames[j]; j++) {
-
+    console.log(j);
+    console.log('f variable: ' + f);
     try {
       arguments.callee(f)}
 
@@ -103,7 +106,7 @@ document.addEventListener('scroll', function() {
     navDesktop.classList.add('nav--scroll-desktop');
     navMobile.classList.add('nav--scroll-mobile');
   }
-  
+
   //
   // if (scrollPosition > 50 && scrollPosition < 51) {
   //   navDesktop.classList.add('scroll-effect');
