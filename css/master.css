@@ -41,11 +41,11 @@
 
   /* FONT SIZES */
 
-  --baseFontSize: 1em;
+  --baseFontSize: 1.75em;
   --fontSizeNavDesktop: 0.5em;
   --fontSizeForm : 1em;
   /* size of the paragraphs */
-  --fontSizeP: 0.8em;
+  --fontSizeP: 0.6em;
   /* size of paragraphs smaller */
   --fontSizePsmall: 0.6em;
   /* written C U B E within the text */
@@ -62,8 +62,8 @@
   --baseLineHeight:  2.35;
   /* element size nav elements desktop */
   --layoutSizeNavDesktopElements: 0.5em;
-  --borderRadius: 5px;
-  --borderRadiusButton: 3px;
+  --borderRadius: 0.5em;
+  --borderRadiusButton: 0.4em;
   --borderRadiusNav: 0.5em;
   /* variable for number of list elements */
   --lengtOfListElements:   5;
@@ -87,7 +87,7 @@ html {
 
 body {
   font-family: 'cube-font';
-  font-size: 2em;
+  font-size: var(--baseFontSize);
   color: var(--fontColorBody);
   margin: 0;
   padding: 0;
@@ -127,7 +127,7 @@ a {
 
 h2 {
   font-family: 'cube-font';
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 h3 {
@@ -166,83 +166,6 @@ div.font-size-small {
     FIRST PAGE
     - LANDING PAGE
 ======================== */
-
-/* TEST Start */
-/* .btn-element-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 33%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-
-.btn-element {
-  display: block; */
-  /* transition: transform 1s, margin-left 90%; */
-/* }
-
-.move-btn {
-  align-content: flex-end;
-  animation: move-btn 2s ease-in;
-}
-
-@keyframes move-btn {
-  0% { right: 0}
-  100% { transform: translateX(70vw); }
-}
-
-.btn-element .line {
-    padding: 0;
-    width: 30px;
-    background: blue;
-    height: 2px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: all 700ms cubic-bezier(.9, 0, .33, 1);
-}
-
-.btn-element .line.line--1 {
-    width: 30px;
-    transform: rotate(0) translateY(0);
-}
-
-.btn-element .line.line--1.line-cross {
-    width: 30px;
-    transform: rotate(45deg) translateY(10px);
-   background: rgba(0,0,0,0.6);
-}
-
-.btn-element .line.line--2 {
-    width: 28px;
-    transform: translateX(0);
-}
-
-.btn-element .line.line--2.line-fade-out {
-    width: 28px;
-    transform: translate(30px);
-    opacity: 0;
-}
-
-.btn-element .line.line--3 {
-    width: 20px;
-    transform: rotate(0) translateY(0);
-}
-
-.btn-element .line.line--3.line-cross {
-    width: 30px;
-    transform: rotate(-45deg) translateY(-10px);
-   background: rgba(0,0,0,0.6);
-}
- */
-
-/* END */
-
-
-
 section.landing {
   height: 100vh;
   left: 0;
@@ -453,8 +376,19 @@ nav .nav-links .link {
   transition: all 400ms ease;
 }
 
+/* NAV MOBILE
+   icon hover effect */
 a.icon-hover:hover {
     color: rgba(100, 0, 0, .3);
+}
+
+nav a {
+  display: flex;
+  transition: all 400ms ease;
+}
+
+nav a .social {
+  font-size: 2em;
 }
 
 nav i {
@@ -463,6 +397,12 @@ nav i {
   width: 2em;
   height: auto;
   padding-right: 10px;
+}
+
+/* nav i globe-element */
+.bi-globe {
+  width: 1.3em;
+  padding-right: 0;
 }
 
 #cube-icon-nav {
@@ -475,6 +415,31 @@ nav brand (cube logo) */
 
 /* ===========
 social media icons */
+
+/* seperator */
+/* seperate contact from Text before */
+.seperator-social {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+/* creates an psyeudo-element after the h4 */
+.seperator-social div:after {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  /* without this the element won't work */
+  content: "";
+  /* puts the psyeudo element on it's own line */
+  display: block;
+  /* centers the border */
+  /* margin: 0 auto; */
+  width: 100%;
+  padding-top: 10px;
+  border-bottom: 3px solid var(--backgroundSecInput);
+}
+
 nav .layout-social-media {
   position: absolute;
   top: 80vh;
@@ -488,6 +453,18 @@ nav .social-media {
 nav .social-media a {
   color: black;
 }
+
+/* Language Selector */
+nav .layout-language-selector {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 85vh;
+}
+
+
+
+
 /* ========= */
 
 
@@ -607,24 +584,6 @@ add class on scroll */
     FIRST PAGE
     - GRID CONTAINER SETTINGS
 ======================== */
-
-/* .grid-container {
-  position: absolute;
-  left: 0;
-  top: 10vh;
-  height: 85vh;
-  display: grid;
-  grid-template-areas:
-    'top top top top top'
-    '. logo logo logo .'
-    '. main main main .'
-    'footer footer footer footer footer'
-    '. . blank . .';
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto 1fr 3fr 0.5fr 1fr;
-} */
-
 .grid-container {
   position: absolute;
   left: 0;
@@ -752,14 +711,14 @@ add class on scroll */
     ======================== */
 
 
-    .mouse_scroll {
+    .mouse-scroll {
     	display: block;
     	margin: 0 auto;
     	width: 1em;
-    	height: 3em;
+    	height: 4em;
     }
 
-    .m_scroll_arrows {
+    .m-scroll-arrows {
       display: block;
       width: 16px;
       height: 16px;
@@ -924,6 +883,7 @@ add class on scroll */
 .heading {
   text-align: left;
   align-self: center;
+  width: 100%;
 }
 
 .input-form {
@@ -1190,7 +1150,7 @@ button {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border: none;
   border-radius: var(--borderRadiusButton);
-  font-size: var(--baseFontSize);
+  font-size: var(--fontSizeForm);
   transition: all 1s ease;
   cursor: pointer;
 }
@@ -1306,13 +1266,15 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
 }
 
 /* seperate contact from Text before */
 .seperator-footer {
   margin-top: 5%;
   margin-bottom: 5%;
-  text-align: center;
+  /* text-align: center; */
+  text-align: left;
 }
 
 /* creates an psyeudo-element after the h4 */
@@ -1322,8 +1284,9 @@ footer {
   /* puts the psyeudo element on it's own line */
   display: block;
   /* centers the border */
-  margin: 0 auto;
-  width: 15%;
+  /* margin: 0 auto; */
+  margin: 0;
+  width: 5%;
   padding-top: 10px;
   border-bottom: 2px solid yellow;
 }
@@ -1356,7 +1319,6 @@ footer {
 
 footer a {
   color: var(--fontColorLinksFooter);
-  font-size: var(--fontSizeP);
 }
 
 /* hover effect */
@@ -1528,14 +1490,28 @@ header.privacy {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  /* moves p-elements 30% to the right */
+  .inner-container-footer p {
+    padding-left: 30%;
+  }
+
   .link-container {
     justify-content: center;
+  }
+
+  /* move seperator to center */
+  .seperator-footer {
+    text-align: center;
+  }
+
+  .seperator-footer h5:after {
+    margin: 0 auto;
   }
 
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1px;
+    grid-gap: 10%;
   }
 }
 
