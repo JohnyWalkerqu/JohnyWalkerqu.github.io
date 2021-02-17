@@ -712,7 +712,8 @@ add class on scroll */
 
 
     .mouse-scroll {
-    	display: block;
+    	display: flex;
+      justify-content: center;
     	margin: 0 auto;
     	width: 33%;
     	height: auto;
