@@ -714,8 +714,9 @@ add class on scroll */
     .mouse-scroll {
     	display: block;
     	margin: 0 auto;
-    	width: 1em;
-    	height: 4em;
+    	width: 33%;
+    	height: auto;
+      margin-bottom: 10%;
     }
 
     .m-scroll-arrows {
@@ -773,8 +774,10 @@ add class on scroll */
     }
 
     .mouse {
-      height: 42px;
-      width: 24px;
+      /* height: 42px;
+      width: 24px; */
+      min-height: 42px;
+      width: 100%;
       border-radius: 14px;
       transform: none;
       border: 2px solid white;
@@ -782,8 +785,6 @@ add class on scroll */
     }
 
     .wheel {
-      height: 5px;
-      width: 2px;
       display: block;
       margin: 5px auto;
       background: white;
