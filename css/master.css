@@ -193,6 +193,12 @@ section.landing {
     FIRST PAGE
     - NAV BAR
 ======================== */
+/* Scroll spacing
+to add mobile nav height*/
+.section {
+  scroll-margin-top: 10vh;
+  /* margin-top: -15vh; */
+}
 
 /* General settings for the block */
 header {
@@ -709,14 +715,6 @@ add class on scroll */
         FIRST PAGE
         - SCROLL DOWN ARROW
     ======================== */
-    /* Scroll spacing
-    to add desktop nav height*/
-  #about-us,
-  #contact {
-      scroll-margin-top: 10vh;
-      /* margin-top: -15vh; */
-  }
-
     .grid-scroll a {
       display: inline-block;
       height: 100%;
@@ -1475,11 +1473,10 @@ header.privacy {
 
   /* Scroll spacing
   to add desktop nav height*/
-#about-us,
-#contact {
-    scroll-margin-top: 15vh;
-    /* margin-top: -15vh; */
-}
+  .section {
+      scroll-margin-top: 15vh;
+      /* margin-top: -15vh; */
+  }
 
 
 /* 62em = 992px */
