@@ -616,7 +616,7 @@ add class on scroll */
   }
 
   .grid-scroll {
-    grid-area: 11 / 6 / 12 / 8;
+    grid-area: 11 / 1 / 12 / 13;
   }
 
   .logo {
@@ -709,6 +709,14 @@ add class on scroll */
         FIRST PAGE
         - SCROLL DOWN ARROW
     ======================== */
+    /* Scroll spacing
+    to add desktop nav height*/
+  #about-us,
+  #contact {
+      scroll-margin-top: 10vh;
+      /* margin-top: -15vh; */
+  }
+
     .grid-scroll a {
       display: inline-block;
       height: 100%;
@@ -1467,11 +1475,11 @@ header.privacy {
 
   /* Scroll spacing
   to add desktop nav height*/
-  #about-us,
-  #contact {
+#about-us,
+#contact {
     scroll-margin-top: 15vh;
     /* margin-top: -15vh; */
-  }
+}
 
 
 /* 62em = 992px */
