@@ -3,40 +3,40 @@ var sectionContact = document.querySelector('.input-form');
 var header = document.querySelector('header');
 
 // DISABLE RIGHT CLICK
-(function(w) {
-  var arr = ['contextmenu', 'copy', 'cut', 'paste',
-             'beforeunload', 'beforeprint'];
-  console.log(arr);
-  for (var i = 0, x; x = arr[i]; i++) {
-    console.log(x + ' #' + i);
-    if (w['on' + x])w['on' + x] = null;
-      console.log('true for: ' + w + w['on' + x]);
-      w.addEventListener(x, function(e) {
-        console.log('addEventListener' + '\n ,w: ' + w + '\n,e: ' + e);
-        e.preventDefault()}, true);
-        // e.stopPropagation()}, true);
-    };
-
-  for (var j = 0, f; f = w.frames[j]; j++) {
-    console.log(j);
-    console.log('f variable: ' + f);
-    try {
-      arguments.callee(f)}
-
-    catch(e){}
-  }
-})
-(window);
-
-function handleCancel(evt) {
-  evt.preventDefault()
-  console.log('touchcancel.');;
-  var touches = evt.changedTouches;
-
-  for (var i = 0; i < touches.length; i++);
-    var idx = ongoingTouchIndexById(touches[i].identifier);
-    ongoingTouches.splice(idx, 1);
-}
+// (function(w) {
+//   var arr = ['contextmenu', 'copy', 'cut', 'paste',
+//              'beforeunload', 'beforeprint'];
+//   console.log(arr);
+//   for (var i = 0, x; x = arr[i]; i++) {
+//     console.log(x + ' #' + i);
+//     if (w['on' + x])w['on' + x] = null;
+//       console.log('true for: ' + w + w['on' + x]);
+//       w.addEventListener(x, function(e) {
+//         console.log('addEventListener' + '\n ,w: ' + w + '\n,e: ' + e);
+//         e.preventDefault()}, true);
+//         // e.stopPropagation()}, true);
+//     };
+//
+//   for (var j = 0, f; f = w.frames[j]; j++) {
+//     console.log(j);
+//     console.log('f variable: ' + f);
+//     try {
+//       arguments.callee(f)}
+//
+//     catch(e){}
+//   }
+// })
+// (window);
+//
+// function handleCancel(evt) {
+//   evt.preventDefault()
+//   console.log('touchcancel.');;
+//   var touches = evt.changedTouches;
+//
+//   for (var i = 0; i < touches.length; i++);
+//     var idx = ongoingTouchIndexById(touches[i].identifier);
+//     ongoingTouches.splice(idx, 1);
+// }
 
 
 // NAV BAR
