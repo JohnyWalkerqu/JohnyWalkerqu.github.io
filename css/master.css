@@ -26,7 +26,8 @@
   --lightGrey: #727272;
   --textColor: #222222;
   --highlightInput: #5264AE;
-  --backgroundSecInput: #d7cac1;
+  --backgroundColorSecInput: #d7cac1;
+  --backgroundColorFooter: #1e2032;
 
   --fontColorBody: #636466;
   --fontColorNav: #939393;
@@ -59,7 +60,7 @@
   --baseFontFamily: 'cube-font', sans-serif;
 
   /* LAYOUT and RADIUS */
-  --baseLineHeight:  2.35;
+  --baseLineHeight: 2.35;
   /* element size nav elements desktop */
   --layoutSizeNavDesktopElements: 0.5em;
   --borderRadius: 0.5em;
@@ -479,7 +480,7 @@ social media icons */
   /* margin: 0 auto; */
   width: 100%;
   padding-top: 10px;
-  border-bottom: 3px solid var(--backgroundSecInput);
+  border-bottom: 3px solid var(--backgroundColorSecInput);
 }
 
 nav .layout-social-media {
@@ -668,7 +669,7 @@ add class on scroll */
   }
 
   .grid-scroll {
-    grid-area: 12 / 1 / 13 / 13;
+    grid-area: 11 / 1 / 12 / 13;
   }
 
   .logo {
@@ -952,9 +953,130 @@ add class on scroll */
 /*
 ========================
     SECOND PAGE
+    - THE PROJECT
+======================== */
+.card {
+  position: relative;
+  text-align: center;
+  max-height: 500px;
+  width: 100%;
+  margin-top: 10%;
+  background-color: var(--backgroundColorSecInput);
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  border: 1px soild yellow;
+  border-radius: 14px;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+}
+
+.card__header {
+  grid-area: 1 / 1 / 2 / 7;
+}
+
+.card__content {
+  grid-area: 2 / 2 / 5 / 5;
+}
+
+.card__footer {
+  grid-area: 6 / 1 / 7 / 7;
+}
+
+.card__header {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.font-capitalize {
+  font-size: 2em;
+}
+
+.card__content {
+  font-size: 0.5em;
+}
+
+.card__content-list {
+  list-style: none;
+  text-align: left;
+  line-height: var(--baseLineHeight);
+}
+
+.card__footer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(10, 1fr);
+  background: var(--backgroundColorFooter);
+  color: var(--fontColorFooter);
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+/* apply a border to the left for every item
+   that immediately follows another item */
+.card__footer > .card__footer-elements + .card__footer-elements {
+  border-left: 1px solid var(--fontColorFooter);
+}
+
+.card__footer-elements {
+  height: 100%;
+  width: 100%;
+}
+
+.start {
+  grid-area: 1 / 1 / 1 / 4;
+}
+
+.screws {
+  grid-area: 1 / 4 / 1 / 7;
+}
+
+.minutes {
+  grid-area: 1 / 7 / 1 / 10;
+}
+
+
+.card__footer-zipper {
+  grid-area: 1 / 9 / 1 / 11;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  padding-bottom: 10%;
+  padding-right: 10%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.line {
+    background: yellow;
+    margin: 2px;
+    height: 1px;
+    cursor: pointer;
+    transition: all 700ms cubic-bezier(.9, 0, .33, 1);
+}
+
+.card__footer-zipper .line.line--1 {
+    width: 30px;
+    /* transform: rotate(-45deg) translateY(0); */
+}
+
+.card__footer-zipper .line.line--2 {
+    width: 25px;
+    /* transform: rotate(-45deg)translateX(0); */
+}
+
+.card__footer-zipper .line.line--3 {
+    width: 20px;
+    /* transform: rotate(-45deg) translateY(0); */
+}
+/*
+========================
+    SECOND PAGE
     - CONTACT PAGE
 ======================== */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -967,7 +1089,7 @@ add class on scroll */
 }
 
 .input-form {
-  background-color: var(--backgroundSecInput);
+  background-color: var(--backgroundColorSecInput);
   /* font-size: 1.2em; */
 }
 
@@ -1330,7 +1452,7 @@ button:active:before {
 footer {
   display: flex;
   flex-direction: column;
-  background-color: #1e2032;
+  background-color: var(--backgroundColorFooter);
   color: var(--fontColorFooter);
   font-size: var(--fontSizeFooter);
   padding-left: 5%;
