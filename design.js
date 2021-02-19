@@ -4,7 +4,7 @@ var header = document.querySelector('header');
 
 // DISABLE RIGHT CLICK
 (function(w) {
-  var arr = ['contextmenu', 'copy', 'cut', 'paste', 'mouseup',
+  var arr = ['contextmenu', 'copy', 'cut', 'paste',
              'beforeunload', 'beforeprint'];
   console.log(arr);
   for (var i = 0, x; x = arr[i]; i++) {
@@ -12,7 +12,7 @@ var header = document.querySelector('header');
     if (w['on' + x])w['on' + x] = null;
       console.log('true for: ' + w + w['on' + x]);
       w.addEventListener(x, function(e) {
-        console.log('addEventListener');
+        console.log('addEventListener' + '\n ,w: ' + w + '\n,e: ' + e);
         e.preventDefault()}, true);
         // e.stopPropagation()}, true);
     };
@@ -27,6 +27,16 @@ var header = document.querySelector('header');
   }
 })
 (window);
+
+function handleCancel(evt) {
+  evt.preventDefault()
+  console.log('touchcancel.');;
+  var touches = evt.changedTouches;
+
+  for (var i = 0; i < touches.length; i++);
+    var idx = ongoingTouchIndexById(touches[i].identifier);
+    ongoingTouches.splice(idx, 1);
+}
 
 
 // NAV BAR
