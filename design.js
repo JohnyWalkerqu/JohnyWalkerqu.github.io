@@ -117,7 +117,6 @@ document.addEventListener('scroll', function() {
     navMobile.classList.add('nav--scroll-mobile');
   }
 
-  //
   // if (scrollPosition > 50 && scrollPosition < 51) {
   //   navDesktop.classList.add('scroll-effect');
   //   console.log('class .scroll-effect removed at scrollPosition: ' + scrollPosition);
@@ -128,7 +127,6 @@ document.addEventListener('scroll', function() {
     console.log('class removed: nav--scroll-desktop');
     navDesktop.classList.remove('nav--scroll-desktop');
     navMobile.classList.remove('nav--scroll-mobile');
-
   }
 })
 
@@ -150,6 +148,84 @@ function search_content() {
 		}
 	}
 }
+
+// SECTION: CONTENT
+// CARDS > Prototype Cabin Turn effect
+var cardPrototype = document.querySelector('.card-prototype');
+var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
+var cardZipper = document.querySelector('.zipper-block');
+var cardZipperClose = document.querySelector('.card__header-close');
+// var cardTurned = document.querySelector('.card-turned');
+
+cardZipper.addEventListener('click', () => {
+  console.log('cardZipper clicked');
+  cardZipper.style.display = "none";
+  cardHeaderZipperBlock.style.gridArea = "1/1/5/7";
+  cardHeaderZipperBlock.classList.add('card-turned');
+
+  // creates new div element
+  var newDiv = document.createElement('div');
+  // defines inner HTML of the div
+  newDiv.innerHTML = '<div class=\"btn-card\"> \
+                        X \
+                      </div>';
+
+  cardHeaderZipperBlock.style.display = "flex";
+  cardHeaderZipperBlock.style.justifyContent = "flex-start";
+  cardHeaderZipperBlock.style.alignItems = "flex-start";
+  // appends the new div to the existing parent node
+  while (newDiv.firstChild) {
+    cardHeaderZipperBlock.appendChild(newDiv.firstChild);
+  }
+
+  // gets the btn element of the card
+  var cardBtn = document.querySelector('.btn-card');
+
+  // sets an event listener to the button
+  cardBtn.addEventListener('click', () => {
+    cardHeaderZipperBlock.style.alignItems = "flex-end";
+    // removes the turned class styles
+    cardHeaderZipperBlock.classList.remove('card-turned');
+    // removes the button
+    cardBtn.parentNode.removeChild(cardBtn);
+    // turns it back to the original place
+    cardHeaderZipperBlock.style.gridArea = "1/6/1/7";
+    // makes the zipper visible again
+    cardZipper.style.display = "flex";
+  })
+}
+);
+
+
+// RUNNING MINUTES
+// const year = new Date().getFullYear();
+// const month = new Date().getMonth();
+// const choosenDate = new Date(2021, 05, 21).getTime();
+// console.log('choosenDate: ' + choosenDate);
+//
+// let countup = setInterval(function() {
+//   const today = new Date().getTime();
+//   const diff = choosenDate - today;
+//
+//   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+//   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+//   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+//
+//   console.log('Today: ' + today + '/ Diff: ' + diff);
+//   document.getElementById("countup").innerHTML =
+//     "<div class=\"days\"> \
+//     <div class=\"c-number\">" + days + ' : '+ "</div></div> \
+//     <div class=\"hours\"> \
+//     <div class=\"c-number\">" + hours + ' : '+ "</div></div> \
+//     <div class=\"minutes\"> \
+//     <div class=\"c-number\">" + minutes + ' : '+ "</div></div> \
+//     <div class=\"seconds\"> \
+//     <div class=\"c-number\">" + seconds + "</div></div> \
+//     <div class=\"left\"></div>\
+//     </div>";
+//
+// }, 1000);
 
 
 // CONTACT FORM
