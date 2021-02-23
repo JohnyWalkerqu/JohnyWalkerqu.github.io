@@ -163,12 +163,22 @@ cardZipper.addEventListener('click', () => {
   cardHeaderZipperBlock.style.gridArea = "1/1/5/7";
   cardHeaderZipperBlock.classList.add('card-turned');
 
-  // creates new div element
+  // creates div element button
   var newDiv = document.createElement('div');
   // defines inner HTML of the div
   newDiv.innerHTML = '<div class=\"btn-card\"> \
                         X \
                       </div>';
+
+  // creates div element image
+  var newDivImage = document.createElement('div');
+  // defines inner HTML of the div
+  newDivImage.innerHTML = '<div \
+                                class=\"image-cube-drawing-simple\"> \
+                                <img id = \"image-card-turned\" \
+                                  src=\"/bilder/Cube-draw-simple.png\" \
+                                  alt=\"cube draw simple\"> \
+                                </div>';
 
   cardHeaderZipperBlock.style.display = "flex";
   cardHeaderZipperBlock.style.justifyContent = "flex-start";
@@ -178,8 +188,15 @@ cardZipper.addEventListener('click', () => {
     cardHeaderZipperBlock.appendChild(newDiv.firstChild);
   }
 
+  // appends the new div to the existing parent node
+  while (newDivImage.firstChild) {
+    cardHeaderZipperBlock.appendChild(newDivImage.firstChild);
+  }
+
   // gets the btn element of the card
   var cardBtn = document.querySelector('.btn-card');
+  // gets the image element of the card
+  var image = document.querySelector('.image-cube-drawing-simple');
 
   // sets an event listener to the button
   cardBtn.addEventListener('click', () => {
@@ -188,6 +205,8 @@ cardZipper.addEventListener('click', () => {
     cardHeaderZipperBlock.classList.remove('card-turned');
     // removes the button
     cardBtn.parentNode.removeChild(cardBtn);
+    // removes the image
+    image.parentNode.removeChild(image);
     // turns it back to the original place
     cardHeaderZipperBlock.style.gridArea = "1/6/1/7";
     // makes the zipper visible again
