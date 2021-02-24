@@ -131,23 +131,105 @@ document.addEventListener('scroll', function() {
 })
 
 
-// SEARCHBAR
-// add search bar functions
-// JavaScript code
-function search_content() {
-	let input = document.getElementById('searchbar').value
-	input=input.toLowerCase();
-	let x = document.getElementsByClassName('animals');
+// COOKIE BAR
+/*
+Cookie bar
+    Initially everything should be toggled off.
+    Clicking on "accept" should toggle all cookies on.
 
-	for (i = 0; i < x.length; i++) {
-		if (!x[i].innerHTML.toLowerCase().includes(input)) {
-			x[i].style.display="none";
-		}
-		else {
-			x[i].style.display="list-item";
-		}
-	}
+Clicking [cookie settings]
+    Accept recommended settings
+        ..should toggle all options.
+        ...and closes modal.
+    Toggling one option toggles that option on or off.
+*/
+
+// definition of the variables
+let cookieAccept = document.getElementById('accept-cookie'),
+    cookieDecline = document.getElementById('decline-cookie'),
+    cookieSettings = document.getElementById('open-cookie-settings')
+    cookieBox = document.querySelector('.cookie-bar');
+
+cookieAccept.addEventListener('click', function() {
+  console.log('Accept clicked');
+
+  if (cookieBox.classList.contains('hidden')) {
+    cookieBox.classList.remove('hidden');
+    setTimeout(function() {
+      cookieBox.classList.remove('visuallyhidden');
+    }, 20);
+  }
+  else {
+    cookieBox.classList.add('visuallyhidden');
+    cookieBox.addEventListener('transitioned', function(e) {
+      setTimeout(function() {
+        cookieBox.classList.add('hidden');
+      }, 1000);
+    }, {
+    capture: false,
+    once: true,
+    passive: false
+  });
 }
+}, false);
+
+cookieDecline.addEventListener('click', function() {
+  console.log('Decline clicked');
+
+  if (cookieBox.classList.contains('hidden')) {
+    cookieBox.classList.remove('hidden');
+    setTimeout(function() {
+      cookieBox.classList.remove('visuallyhidden');
+    }, 20);
+  }
+  else {
+    cookieBox.classList.add('visuallyhidden');
+    cookieBox.addEventListener('transitioned', function(e) {
+      setTimeout(function() {
+        cookieBox.classList.add('hidden');
+      }, 1000);
+    }, {
+    capture: false,
+    once: true,
+    passive: false
+  });
+}
+}, false);
+
+// $("#accept-all").click(function(){
+//     $("#myModal").modal("hide");
+// });
+//
+// var acceptAllCookies = {
+// };
+//
+// var deleteAllCookies = {
+// };
+//
+// var cookieConsents = {
+//     hs_consent: false,
+//     ga_consent: false,
+//     fu_consent: true
+// };
+//
+// $('#functional-checkbox').change(function () {
+//     if ($(this).prop("checked")) {
+//         cookieConsents.hs_consent = true;
+//         return;
+//     }
+//     cookieConsents.hs_consent = false;
+// });
+//
+// $('#marketing-checkbox').change(function () {
+//     if ($(this).prop("checked")) {
+//         cookieConsents.hs_consent = true;
+//         return;
+//     }
+//     cookieConsents.hs_consent = false;
+// });
+
+
+
 
 // SECTION: CONTENT
 // CARDS > Prototype Cabin Turn effect

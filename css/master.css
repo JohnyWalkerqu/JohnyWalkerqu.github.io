@@ -31,11 +31,19 @@
 
   --fontColorBody: #636466;
   --fontColorNav: #939393;
-  --fontColorFooter: white;
+  --fontColorClear: white;
   --fontColorLinksFooter: #fff9;
   --fontColorForm: #999;
 
   --colorSignal: yellow;
+  /* background-image */
+  --colorSignalOrangeGradient-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+  /* background-color */
+  --colorSignalOrangeGradient-color: #f5d020;
+  --colorCardHeader: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  --colorAccept: #81C784;
+  --colorDecline: #B00020;
+
 
     /* DROPDOWN STYLING */
     --select-border: var(--highlightInput);
@@ -173,6 +181,140 @@ div.font-size-small {
   /* padding-left: 0.2em; */
   /* padding-right: 0.2em; */
 }
+
+/*
+========================
+    START
+    COOKIE SETTINGS
+======================== */
+.cookie-bar {
+    background: #f8f8f8;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 14px 14px;
+    box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
+    z-index: 2001;
+}
+
+.cookie-header {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+.input-group-lg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 1% 4%;
+  font-size: var(--fontSizeP);
+}
+
+#accept-cookie:hover {
+  background-color: var(--colorAccept);
+}
+
+#decline-cookie:hover {
+  background-color: var(--colorDecline);
+}
+
+#cookie-link {
+  color: var(--fontColorBody);
+  text-decoration: underline;
+}
+
+#cookie-link:hover {
+  color: var(--fontColorBody);
+}
+
+/* MODAL SETTINGS */
+.modal {
+  display: none;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #52AF52;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #52AF52;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* animation classes */
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s linear;
+}
+
+/*
+========================
+    END
+    COOKIE SETTINGS
+======================== */
+
 
 /*
 ========================
@@ -963,8 +1105,8 @@ add class on scroll */
 ======================== */
 .card__container-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(500px, 1fr)); */
   grid-gap: 2em;
 }
 
@@ -1001,6 +1143,10 @@ add class on scroll */
 
 /* CARD HEADER */
 .card__header {
+  background-image: var(--colorCardHeader);
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  color: var(--fontColorClear);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1039,7 +1185,7 @@ add class on scroll */
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   background: var(--backgroundColorFooter);
-  color: var(--fontColorFooter);
+  color: var(--fontColorClear);
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 }
@@ -1047,7 +1193,7 @@ add class on scroll */
 /* apply a border to the left for every item
    that immediately follows another item */
 .card__footer > .card__footer-elements + .card__footer-elements {
-  border-left: 1px solid var(--fontColorFooter);
+  border-left: 1px solid var(--fontColorClear);
 }
 
 .card__footer-elements {
@@ -1240,7 +1386,8 @@ ZIPPER SETTINGS
 }
 
 .line {
-    background: var(--colorSignal);
+    background-image: var(--colorSignalOrangeGradient-image);
+    /* background-color: var(--colorSignalOrangeGradient-color); */
     cursor: pointer;
     height: 2px;
     transition: all 700ms cubic-bezier(.9, 0, .33, 1);
@@ -1715,7 +1862,7 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: var(--backgroundColorFooter);
-  color: var(--fontColorFooter);
+  color: var(--fontColorClear);
   font-size: var(--fontSizeFooter);
   padding-left: 5%;
   padding-top: 5%;
@@ -1787,7 +1934,7 @@ footer a {
 
 /* hover effect */
 .footer-partner-hover:hover {
-  color: var(--fontColorFooter);
+  color: var(--fontColorClear);
   cursor: pointer;
   transition: all 1s ease;
   filter: brightness(1.7);
@@ -1802,7 +1949,7 @@ footer a {
 
 .footer-link-hover:hover {
   border-bottom: 1px dashed var(--colorSignal);
-  color: var(--fontColorFooter);
+  color: var(--fontColorClear);
   transition: all 1s ease;
 }
 
