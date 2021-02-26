@@ -35,6 +35,14 @@
   --fontColorLinksFooter: #fff9;
   --fontColorForm: #999;
 
+  /* SVG */
+  /* for usage in the filter property
+     Link: https://codepen.io/sosuke/pen/Pjoqqp
+  */
+
+  --fontColorBodySVG: invert(40%) sepia(0%) saturate(912%) hue-rotate(261deg) brightness(95%) contrast(88%);
+  --fontColorClearSVG: invert(100%) sepia(0%) saturate(0%) hue-rotate(73deg) brightness(115%) contrast(101%);
+
   --colorSignal: yellow;
   /* background-image */
   --colorSignalOrangeGradient-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
@@ -129,22 +137,29 @@ a {
   color: white;
 }
 
-#logo {
-  width: 100%;
+.logo {
   height: auto;
   position: relative;
+  cursor: pointer;
 
-  /* disable select to copy the logo
-     -------
-     this is set aditional to the JS
-     because the JS-Code does not work
-     on mobile yet.
-  */
+  /* disable select to copy the logo */
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+  .logo-small {
+    max-width: 4em;
+  }
+
+  .grey {
+    filter: var(--fontColorBodySVG);
+  }
+
+  .white {
+    filter: var(--fontColorClearSVG);
+  }
 
 h2 {
   font-family: 'cube-font';
@@ -214,7 +229,11 @@ div.font-size-small {
 
 .btn {
   padding: 1% 4%;
-  font-size: var(--fontSizeP);
+}
+
+.btn-cookie {
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 #accept-cookie:hover {
@@ -330,6 +349,8 @@ section.landing {
 /* BACKGROUND */
 .landing-background-image {
   position: absolute;
+  left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
   background-image: url('/bilder/road-381227_1920.jpg');
@@ -820,10 +841,6 @@ add class on scroll */
     grid-area: 11 / 1 / 12 / 13;
   }
 
-  .logo {
-    filter: invert(30%);
-  }
-
   /* cube image */
   #cube {
     position: absolute;
@@ -896,14 +913,14 @@ add class on scroll */
     position: relative;
     display: flex;
     text-align: center;
-    filter: invert(70%) blur(1px);
+    filter: blur(2px);
     z-index: 1;
   }
 
     .container-cube-logo-item {
       flex: 1;
       display: inline-block;
-      color: #363739;
+      color: #b1b4ba;
       text-transform: uppercase;
       font-size: 1.6em;
     }
@@ -1110,7 +1127,7 @@ add class on scroll */
   grid-gap: 2em;
 }
 
-.card {
+.card-own {
   position: relative;
   text-align: center;
   height: 100%;
@@ -1123,6 +1140,28 @@ add class on scroll */
   grid-template-rows: 0.5fr auto 0.1fr 0.5fr;
   border-radius: 14px;
   box-shadow: -1px 15px 30px -12px black;
+}
+
+.card {
+  background-color: var(--backgroundColorSecInput);
+  border-radius: 14px;
+  box-shadow: -1px 15px 30px -12px black;
+  border: none;
+}
+
+.card-title {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-bottom: 2px solid white;
+}
+
+.card-body {
+  padding: 0
+}
+
+
+.card-text {
+  padding: 0;
 }
 
 .card__header {
@@ -1143,7 +1182,7 @@ add class on scroll */
 
 /* CARD HEADER */
 .card__header {
-  background-image: var(--colorCardHeader);
+  /* background-image: var(--colorCardHeader); */
   border-top-right-radius: 14px;
   border-top-left-radius: 14px;
   color: var(--fontColorClear);
@@ -1162,6 +1201,13 @@ add class on scroll */
   font-size: 0.6em;
 }
 
+.bi-camera {
+  display: flex;
+  cursor: pointer;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+
 .font-capitalize {
   font-size: 2em;
 }
@@ -1178,6 +1224,25 @@ add class on scroll */
   text-align: left;
   padding-left: 0;
   line-height: var(--baseLineHeight);
+}
+
+.list-group-item {
+  font-size: var(--fontSizeP);
+}
+
+.rounded {
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.card-footer-button {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+/* adjusts the button over the complete width */
+.btn-card-footer {
+  display: flex;
 }
 
 .card__footer {
@@ -1346,9 +1411,9 @@ i.animation {
     display: flex;
     font-size: 0.5em;
     height: 100%;
-    width: 100%;
     justify-content: center;
     align-items: center;
+    margin-left: 5px;
   }
 
 /*
@@ -1501,6 +1566,10 @@ Animation
 .input-form {
   background-color: var(--backgroundColorSecInput);
   /* font-size: 1.2em; */
+}
+
+.form-control {
+  background-color: transparent;
 }
 
 section {
@@ -1752,18 +1821,21 @@ textarea {
 
 /* BUTTON */
 button {
-  margin-left: 5%;
+  /* margin-left: 5%; */
   background-color: #454753;
   color: white;
   padding: 2.5% 7.5%;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border: none;
   border-radius: var(--borderRadiusButton);
   font-size: var(--fontSizeForm);
   transition: all 1s ease;
   cursor: pointer;
+}
+
+.btn-shadow {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 button:hover {

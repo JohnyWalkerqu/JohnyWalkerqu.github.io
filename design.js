@@ -2,42 +2,6 @@ var sectionLanding = document.querySelector('.landing');
 var sectionContact = document.querySelector('.input-form');
 var header = document.querySelector('header');
 
-// DISABLE RIGHT CLICK
-// (function(w) {
-//   var arr = ['contextmenu', 'copy', 'cut', 'paste',
-//              'beforeunload', 'beforeprint'];
-//   console.log(arr);
-//   for (var i = 0, x; x = arr[i]; i++) {
-//     console.log(x + ' #' + i);
-//     if (w['on' + x])w['on' + x] = null;
-//       console.log('true for: ' + w + w['on' + x]);
-//       w.addEventListener(x, function(e) {
-//         console.log('addEventListener' + '\n ,w: ' + w + '\n,e: ' + e);
-//         e.preventDefault()}, true);
-//         // e.stopPropagation()}, true);
-//     };
-//
-//   for (var j = 0, f; f = w.frames[j]; j++) {
-//     console.log(j);
-//     console.log('f variable: ' + f);
-//     try {
-//       arguments.callee(f)}
-//
-//     catch(e){}
-//   }
-// })
-// (window);
-//
-// function handleCancel(evt) {
-//   evt.preventDefault()
-//   console.log('touchcancel.');;
-//   var touches = evt.changedTouches;
-//
-//   for (var i = 0; i < touches.length; i++);
-//     var idx = ongoingTouchIndexById(touches[i].identifier);
-//     ongoingTouches.splice(idx, 1);
-// }
-
 
 // NAV BAR
 var menuBtnTest = document.querySelector('.btn-element');
@@ -50,9 +14,9 @@ var lineOne = document.querySelector('nav .menu-btn .line--1');
 var lineTwo = document.querySelector('nav .menu-btn .line--2');
 var lineThree = document.querySelector('nav .menu-btn .line--3');
 var link = document.querySelector('nav .nav-links');
-// menuBtnTest.addEventListener('click', () => {
-//   menuBtnTest.classList.add('move-btn');
-// });
+var logoColor = document.querySelector('.logo');
+
+console.log(logoColor);
 
 menuBtn.addEventListener('click', () => {
     var navMobileScroll = document.querySelector('.nav--scroll-mobile');
@@ -115,6 +79,8 @@ document.addEventListener('scroll', function() {
     console.log(scrollPosition + 'scrollPosition > windowNavDesktop');
     navDesktop.classList.add('nav--scroll-desktop');
     navMobile.classList.add('nav--scroll-mobile');
+    // logoColor.classList.add('grey');
+    // logoColor.classList.remove('white');
   }
 
   // if (scrollPosition > 50 && scrollPosition < 51) {
@@ -127,6 +93,8 @@ document.addEventListener('scroll', function() {
     console.log('class removed: nav--scroll-desktop');
     navDesktop.classList.remove('nav--scroll-desktop');
     navMobile.classList.remove('nav--scroll-mobile');
+    // logoColor.classList.remove('grey');
+    // logoColor.classList.add('white');
   }
 })
 
@@ -196,52 +164,81 @@ cookieDecline.addEventListener('click', function() {
 }
 }, false);
 
-// $("#accept-all").click(function(){
-//     $("#myModal").modal("hide");
-// });
+// (function () {
+//   "use strict";
 //
-// var acceptAllCookies = {
-// };
+//   var cookieName = 'tplCookieConsent'; // The cookie name
+//   var cookieLifetime = 365; // Cookie expiry in days
 //
-// var deleteAllCookies = {
-// };
+//   /**
+//    * Set a cookie
+//    * @param cname - cookie name
+//    * @param cvalue - cookie value
+//    * @param exdays - expiry in days
+//    */
+//   var _setCookie = function (cname, cvalue, exdays) {
+//     var d = new Date();
+//     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+//     var expires = "expires=" + d.toUTCString();
+//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+//   };
 //
-// var cookieConsents = {
-//     hs_consent: false,
-//     ga_consent: false,
-//     fu_consent: true
-// };
-//
-// $('#functional-checkbox').change(function () {
-//     if ($(this).prop("checked")) {
-//         cookieConsents.hs_consent = true;
-//         return;
+//   /**
+//    * Get a cookie
+//    * @param cname - cookie name
+//    * @returns string
+//    */
+//   var _getCookie = function (cname) {
+//     var name = cname + "=";
+//     var ca = document.cookie.split(';');
+//     for (var i = 0; i < ca.length; i++) {
+//       var c = ca[i];
+//       while (c.charAt(0) == ' ') {
+//         c = c.substring(1);
+//       }
+//       if (c.indexOf(name) == 0) {
+//         return c.substring(name.length, c.length);
+//       }
 //     }
-//     cookieConsents.hs_consent = false;
-// });
+//     return "";
+//   };
 //
-// $('#marketing-checkbox').change(function () {
-//     if ($(this).prop("checked")) {
-//         cookieConsents.hs_consent = true;
-//         return;
+//   /**
+//    * Should the cookie popup be shown?
+//    */
+//   var _shouldShowPopup = function () {
+//     if (_getCookie(cookieName)) {
+//       return false;
+//     } else {
+//       return true;
 //     }
-//     cookieConsents.hs_consent = false;
-// });
-
-
+//   };
+//
+//   // Show the cookie popup on load if not previously accepted
+//   if (_shouldShowPopup()) {
+//     $('#cookieModal').modal('show');
+//   }
+//
+//   // Modal dismiss btn - consent
+//   $('#cookieModalConsent').on('click', function () {
+//     _setCookie(cookieName, 1, cookieLifetime);
+//   });
+//
+// })();
 
 
 // SECTION: CONTENT
 // CARDS > Prototype Cabin Turn effect
 var cardPrototype = document.querySelector('.card-prototype');
 var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
+var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
 var cardZipperClose = document.querySelector('.card__header-close');
 // var cardTurned = document.querySelector('.card-turned');
 
-cardZipper.addEventListener('click', () => {
+cardCamIcon.addEventListener('click', () => {
   console.log('cardZipper clicked');
-  cardZipper.style.display = "none";
+  cardCamIcon.style.display = "none";
   cardHeaderZipperBlock.style.gridArea = "1/1/5/7";
   cardHeaderZipperBlock.classList.add('card-turned');
 
@@ -249,7 +246,7 @@ cardZipper.addEventListener('click', () => {
   var newDiv = document.createElement('div');
   // defines inner HTML of the div
   newDiv.innerHTML = '<div class=\"btn-card\"> \
-                        X \
+                        <i class=\"bi bi-x\"></i> \
                       </div>';
 
   // creates div element image
@@ -292,7 +289,7 @@ cardZipper.addEventListener('click', () => {
     // turns it back to the original place
     cardHeaderZipperBlock.style.gridArea = "1/6/1/7";
     // makes the zipper visible again
-    cardZipper.style.display = "flex";
+    cardCamIcon.style.display = "flex";
   })
 }
 );
