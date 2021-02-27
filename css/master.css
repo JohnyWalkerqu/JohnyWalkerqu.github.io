@@ -1206,8 +1206,6 @@ add class on scroll */
   transition: all 0.4s ease-in-out 0s;
 }
 
-
-
 .card__header {
   grid-area: 1 / 1 / 2 / 7;
   height: 10vh;
@@ -1299,20 +1297,43 @@ add class on scroll */
   border-bottom-right-radius: 14px;
 }
 
-/* apply a border to the left for every item
-   that immediately follows another item */
-.card__footer > .card__footer-elements + .card__footer-elements {
-  border-left: 1px solid var(--fontColorClear);
-}
-
 .card__footer-elements {
   height: 100%;
   width: 100%;
   transition: all 400ms cubic-bezier(.9, 0, .33, 1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* apply a border to the left for every item
+   that immediately follows another item */
+div.card__footer-elements {
+  border-bottom: 4px solid var(--fontColorClear);
+}
+
+div.card__footer-elements:last-child {
+  border-bottom: none;
+}
+
+.text {
+  width: 80%;
+  font-size: var(--fontSizeP);
+}
+
+.collapse {
+  margin-top: 15px;
+}
+
+
 
 /*
 FOOTER ELEMENTS ICON
@@ -1371,15 +1392,6 @@ i.animation {
 .card__footer-elements:hover {
   background-color: var(--backgroundColorSecInput);
   color: var(--fontColorBody);
-}
-
-/* border-radius added for the hover effect */
-.start {
-  border-bottom-left-radius: 14px;
-}
-
-.minutes {
-  border-bottom-right-radius: 14px;
 }
 
 .start {

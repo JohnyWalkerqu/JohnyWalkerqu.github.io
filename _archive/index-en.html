@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ===================== LOAD Bootstrap 4 Sylesheet =================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- ===================== LOAD Own Stylesheet =================== -->
+    <link rel="stylesheet" href="/../css/master.css"/>
+    <!-- ===================== LOAD Bootstrap Icons =================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>cube-manufaktur.com/en</title>
+  </head>
+  <body>
+    <!--
+     ========================
+         COOKIE SETTINGS - START
+     ========================
+     -->
+     <div class="cookie-bar">
+       <h5 class="cookie-header"><i class="bi bi-palette"></i> Cookie-Note</h5>
+         <p>To provide the best service on this website we use cookies to learn
+           more about your usage to provide you a better experience. For more
+           information see our <a id="cookie-link" class="footer-link-hover"
+           href="/en/cookie-policy-en.html">Cookie-Policy</a>.
+         </p>
+       <div class="input-group-lg pull-right">
+         <button id="accept-cookie" type="button" class="btn btn-success btn-cookie">
+           <i class="bi bi-check2"></i> Accept</button>
+         <button id="decline-cookie" type="button" class="btn btn-default btn-cookie">
+           <i class="bi bi-x"></i> Decline</button>
+         <button id="open-cookie-settings" type="button" class="btn btn-default btn-cookie"
+            data-toggle="modal" data-target="#myModal">
+           <i class="bi bi-gear"></i> Settings</button>
+       </div>
+   </div>
+    <!--
+     ========================
+         COOKIE SETTINGS - END
+     ========================
+     -->
+     <!-- prepared modal -->
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span class="h2">&times;</span></button>
+          <h3 class="modal-title">Cookie Settings</h3>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ab inventore dignissimos eos voluptate repellendus pariatur rem dolor soluta vel modi repellat corrupti dolorem, aut fugiat! At maiores odio facere.
+              </p>
+
+              <button type="button" id="accept-all" class="btn btn-success">
+                <i class="fa fa-fw fa-check"></i>
+                Accept recommended settings
+              </button>
+              <br><br>
+            </div>
+
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-10">
+              <h4>Functional Cookies</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquid, quod maiores illum consequuntur aspernatur accusantium corporis ipsa eum autem odio temporibus quae maxime est facilis possimus rerum perferendis? Earum.</p>
+            </div>
+            <div class="col-md-2">
+              <!-- Rounded switch -->
+              <!-- <br>
+              <label class="switch pull-right">
+                <input id="functional-checkbox" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-10">
+              <h4>Marketing Cookies</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquid, quod maiores illum consequuntur aspernatur accusantium corporis ipsa eum autem odio temporibus quae maxime est facilis possimus rerum perferendis? Earum.</p>
+            </div>
+            <div class="col-md-2"> -->
+              <!-- Rounded switch -->
+              <!-- <br>
+              <label class="switch pull-right">
+                <input id="marketing-checkbox" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <p class="pull-left nobottommargin" style="margin-bottom: 0;"><i class="fa fa-fw fa-external-link"></i> Read more about <a href="#">Cookies &amp; Privacy</a></p>
+        </div>
+
+
+      </div>
+    </div>
+  </div> -->
+
+
+    <header>
+      <div class="grid-nav nav-mobile">
+        <nav class="nav">
+          <div class="menu-btn">
+            <div class="line line--1"></div>
+            <div class="line line--2"></div>
+            <div class="line line--3"></div>
+          </div>
+          <div class="nav-links">
+            <div class="nav-brand">
+              <a class="nav-brand" href="#">
+                <img
+                class="logo logo-small grey"
+                contextmenu=""
+                src="/Logo/A_cube_Logo_RGB.svg" alt="Logo Cube Navbar">
+              </a>
+            </div>
+            <a href="#home" class="link icon-hover">
+              <i class="bi bi-house"></i>
+              Home
+            </a>
+            <a href="#about-us" class="link icon-hover">
+              <i><img id="cube-icon-nav" src="/Logo/Cube-Logo-Icon-Seite001.svg"
+                alt="Cube Icon"
+                type="image/x-icon"></i>
+                About us
+            </a>
+            <a href="#contact" class="link icon-hover">
+              <i class="bi bi-credit-card-2-front-fill"></i>
+              Contact
+            </a>
+            <div class="seperator-social">
+              <div class="layout-social-media">
+                <div class="social-media">
+                  <a class="icon-hover social" href="#">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a class="icon-hover social" href="#">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="layout-language-selector">
+              <a class="link icon-hover" href="/../index.html">
+                <i class="bi bi-globe"></i>
+                <span class="link-language">Deutsch</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- NAV MOBILE CLOSED  / Logo -->
+      <div class="nav-mobile-logo">
+        <a href="#">
+          <img
+            class="logo logo-small grey"
+            src="/Logo/A_cube_Logo_RGB.svg"
+            alt="Logo Cube Navbar Closed">
+        </a>
+      </div>
+
+      <!-- NAV DESKTOP -->
+      <div class="grid-nav nav-desktop">
+          <div class="nav-brand-desktop">
+            <a class="nav-brand-desktop" href="#">
+              <img
+                class="logo logo-small grey"
+                src="/Logo/A_cube_Logo_RGB.svg"
+                alt="Logo Cube Navbar">
+            </a>
+          </div>
+          <div class="nav-items">
+            <ul class="nav-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about-us">About us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li id="nav-item-language">
+                <div class="layout-language-selector">
+                  <a class="link icon-hover" href="/../index.html">
+                    <i class="bi bi-globe"></i>
+                    <span class="link-language">Deutsch</span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </header>
+    <main>
+      <!--
+      ========================
+          FIRST PAGE
+          - GRID CONTAINER SETTINGS
+      ========================
+      -->
+      <section id="home" class="landing">
+        <div class="landing-background-image"></div>
+        <div class="grid-container">
+          <div class="grid-image style">
+            <img
+              id="car"
+              src="/bilder/Pickup-mit-Cube-4-cube_logo.png"
+              alt="Pickup with Cube">
+          </div>
+          <div class="grid-text style">
+            <div class="container-cube-logo grid-logo-font">
+              <div class="container-cube-logo-item cube-c">
+                <span id="cube-logo-special-c">c</span></div>
+              <div class="container-cube-logo-item cube-u">
+                <span id="cube-logo-special-u">u</span></div>
+              <div class="container-cube-logo-item cube-b">
+                <span id="cube-logo-special-b">b</span></div>
+              <div class="container-cube-logo-item cube-e">
+                <span id="cube-logo-special-e">e</span></div>
+            </div>
+          </div>
+          <!-- mouse scroll -->
+          <div class="grid-scroll style">
+            <a href="#about-us">
+              <div class="mouse-scroll">
+            		<!-- <div class="mouse">
+            			<div class="wheel"></div>
+            		</div> -->
+            		<!-- <div> -->
+            			<span class="m-scroll-arrows first"></span>
+            			<span class="m-scroll-arrows second"></span>
+            			<span class="m-scroll-arrows third"></span>
+            		<!-- </div> -->
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </section>
+      <!--
+      ========================
+          SECOND PAGE
+          - CONTACT PAGE
+      ========================
+      -->
+      <section id="about-us" class="section">
+        <div class="section-content">
+          <div class="container">
+            <div class="heading">
+              <h2 class="heading">about us</h2>
+            </div>
+            <div class="card__container-content">
+              <!-- <div class="card-own card-prototype">
+                <div class="card__header">
+                  <div><span class="font-capitalize">P</span>rototype Cabin</div>
+                </div>
+                <div class="card__header-zipper">
+                  <i class="bi bi-camera"></i>
+                </div>
+                <div class="card__content">
+                  <p>Our goals with this prototype are:</p>
+                  <ul class="card__content-list">
+                    <li>getting experience in the aproach of building camping
+                      cabins for european pickup's</li>
+                    <li>realization of an old dream and desires</li>
+                    <li>testing the feasability and market acceptance </li>
+                    <li>first steps to the camping business</li>
+                  </ul>
+                </div>
+                <div class="card__hover-info">
+                  <i class="bi bi-info-square">
+                    <span class="pre"> Hover or click to get more info.</span>
+                  </i>
+                </div>
+                <div class="hide-container hide-container-element-start">
+                  <div class="text">The initial project idea goes back to the
+                    1970s at the yearly Corsica vacation. Finally in 2019, after
+                    visiting the CMT and several other camping fairs the idea to
+                    built a prototype was born.</div>
+                </div>
+                <div class="hide-container hide-container-element-screws">
+                  <div class="text">The shell of the
+                    <span class="cube-logo-font">cube</span> is mounted with
+                    dozens of screws. There are two reasons to do it this way.
+                    The first one is the unique design we can create from it,
+                    while the second gives more flexibilty in future changes of
+                    the panels.</div>
+                </div>
+                <div class="hide-container hide-container-element-minutes">
+                  <div class="text">Many hours of thoughts, drafts and
+                    discussion went into the prototype with several people
+                    familiar or non-familiar with the matter as well. Those
+                    talks formed the ideas and current state of realization.</div>
+                </div>
+
+                <div class="card__footer">
+                  <div class="card__footer-elements start">
+                    <p>2019</p>
+                    <i class="bi bi-caret-right-fill animation"></i>
+                    <p>start</p>
+                  </div>
+                  <div class="card__footer-elements screws">
+                    <p>1000</p>
+                    <i class="bi bi-tools animation"></i>
+                    <p>screws</p>
+                  </div>
+                  <div class="card__footer-elements minutes">
+                    <p>20000</p>
+                    <i class="bi bi-lightning-fill animation"></i>
+                    <p>hours thought</p>
+                  </div>
+                </div>
+              </div> -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card card-prototype">
+                  <div class="card-body col-12">
+                    <div class="card-title flex-row col-12">
+                      <div class="card-title-text card-title-text-w60">
+                        <span class="font-capitalize">P</span>rototype Cabin
+                      </div>
+                      <div class="card__header-zipper">
+                        <i class="bi bi-camera"></i>
+                      </div>
+                    </div>
+                    <div class="card-text">
+                      <p>Our goals with this prototype are:</p>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">getting experience in the
+                          aproach of building camping
+                          cabins for european pickup's</li>
+                        <li class="list-group-item">realization of an old dream
+                          and desires</li>
+                        <li class="list-group-item">testing the feasability and
+                          market acceptance </li>
+                        <li class="list-group-item">first steps to the camping
+                          business</li>
+                      </ul>
+                      <div class="card-footer-button">
+                        <a class="btn btn-primary btn-shadow btn-card-footer"
+                           data-toggle="collapse"
+                           href="#collapseExample"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="collapseExample">
+                          Click for more Info <i class="bi bi-info-square"></i>
+                        </a>
+                      </div>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                          <div class="card__footer-elements start">
+                            <div class="elements">
+                              <p class="my-0">2019</p>
+                              <i class="bi bi-caret-right-fill animation"></i>
+                              <p class="my-0">start</p>
+                            </div>
+                            <div class="text">
+                              The initial project idea goes back to the
+                                1970s at the yearly Corsica vacation. Finally in 2019, after
+                                visiting the CMT and several other camping fairs the idea to
+                                built a prototype was born.
+                            </div>
+                          </div>
+                          <div class="card__footer-elements screws">
+                            <div class="elements">
+                              <p class="my-0">1000</p>
+                              <i class="bi bi-tools animation"></i>
+                              <p class="my-0">screws</p>
+                            </div>
+                            <div class="text">
+                              The shell of the
+                                <span class="cube-logo-font">cube</span> is
+                                mounted with dozens of screws. There are two
+                                reasons to do it this way. The first one is the
+                                unique design we can create from it, while the
+                                second gives more flexibilty in future changes of
+                                the panels.
+                            </div>
+                          </div>
+                          <div class="card__footer-elements minutes">
+                            <div class="elements">
+                              <!-- property sets margin bottom to 0 -->
+                              <p class="my-0">20000</p>
+                              <i class="bi bi-lightning-fill animation"></i>
+                              <p class="my-0" style="text-align: center;">hours thought</p>
+                            </div>
+                            <div class="text">
+                              Many hours of thoughts, drafts and
+                              discussion went into the prototype with several people
+                              familiar or non-familiar with the matter as well. Those
+                              talks formed the ideas and current state of realization.
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  <!-- <div class="card__hover-info">
+                    <i class="bi bi-info-square">
+                      <span class="pre"> Hover or click to get more info.</span>
+                    </i>
+                  </div>
+                  <div class="hide-container hide-container-element-start">
+                    <div class="text">The initial project idea goes back to the
+                      1970s at the yearly Corsica vacation. Finally in 2019, after
+                      visiting the CMT and several other camping fairs the idea to
+                      built a prototype was born.</div>
+                  </div>
+                  <div class="hide-container hide-container-element-screws">
+                    <div class="text">The shell of the
+                      <span class="cube-logo-font">cube</span> is mounted with
+                      dozens of screws. There are two reasons to do it this way.
+                      The first one is the unique design we can create from it,
+                      while the second gives more flexibilty in future changes of
+                      the panels.</div>
+                  </div>
+                  <div class="hide-container hide-container-element-minutes">
+                    <div class="text">Many hours of thoughts, drafts and
+                      discussion went into the prototype with several people
+                      familiar or non-familiar with the matter as well. Those
+                      talks formed the ideas and current state of realization.</div>
+                  </div> -->
+
+                    <!-- <div class="card__footer-elements start">
+                      <p>2019</p>
+                      <i class="bi bi-caret-right-fill animation"></i>
+                      <p>start</p>
+                    </div>
+                    <div class="card__footer-elements screws">
+                      <p>1000</p>
+                      <i class="bi bi-tools animation"></i>
+                      <p>screws</p>
+                    </div>
+                    <div class="card__footer-elements minutes">
+                      <p>20000</p>
+                      <i class="bi bi-lightning-fill animation"></i>
+                      <p>hours thought</p> -->
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body col-12">
+                    <div class="card-title col-12 card-title-text">
+                      <div class="cube-logo-font">cube</div>
+                      & <span class="pre"> <a class="footer-link-hover font-color-body" href="https://www.schreinerei-walk.de" target="_blank">Schreinerei Walk</a></span>
+
+                      <!-- <div class="card__header-1">
+                        <a href="https://www.schreinerei-walk.de" target="_blank">Schreinerei Walk GmbH</a>
+                      </div>
+                      <div class="card__header-1">in cooperation with
+                        <a href="https://campermanufaktur-wuerzburg.de" target="_blank">campermanufaktur</a>
+                      </div> -->
+                    </div>
+                    <div class="card-text">
+                      <p>Our claim is:</p>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">building a high quality
+                          product in connection with modern materials,
+                          traditional craftmanship and knowledge in automotive
+                          engineering</li>
+                        <li class="list-group-item">configurable elements as
+                          well as individual solutions to meet
+                          the requirements of our demanding customers</li>
+                        <li class="list-group-item br-bottom-rounded">creating
+                          modern, minimalistic and functional oriented
+                          products</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="card-own card-claim">
+              <div class="card__header">
+                <div class="cube-logo-font">cube</div>
+                <div class="card__header-1">& Schreinerei Walk GmbH</div>
+                <div class="card__header-1">in cooperation with campermanufaktur</div>
+              </div>
+              <div class="card__content">
+                <p>Our claim is:</p>
+                <ul class="card__content-list">
+                  <li>building a high quality product in connection with
+                      modern materials, traditional craftmanship and knowledge
+                      in automotive engineering</li>
+                  <li>configurable elements as well as individual solutions to meet
+                     the requirements of our demanding customers</li>
+                  <li>creating modern, minimalistic and functional oriented
+                    products</li>
+                </ul>
+              </div>
+            </div> -->
+
+            <div class="row card-about-us">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body col-12">
+                    <div class="card-title card-title-text col-12">
+                      <div>About us</div>
+                    </div>
+                    <div class="card-text">
+                      <p>Who are we?</p>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">We run a carpentry since the early 1960s when our
+                          grand-grand or grand-father started to build furnitures
+                          after his master training with a small number of machines
+                          on his own.
+                        </li>
+                        <li class="list-group-item">Two generations later the company had grown and started
+                           to work on more complex and greater projects on behalf of
+                           their clients. As the experience and machine park had grown
+                           over time the ever-since dream of building a very own
+                           designed, engineered and manufactured product got stronger.
+                        </li>
+                        <li class="list-group-item rounded">During the midtime of 2019 on a melting hot summer vacation
+                           day on a camping site on the island of Corsica a strange
+                           but also attracting kind of camping vehicle moved along the
+                           water front road where it was spotted by the eyes of Michael
+                           and Heike Walk.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- <div class="card-own card-about-us">
+              <div class="card__header">
+                <div>About us</div>
+              </div>
+              <div class="card__content">
+                <p>Who are we?</p>
+                <ul class="card__content-list list-style-no">
+                  <li>We run a carpentry since the early 1960s when our
+                    grand-grand or grand-father started to build furnitures
+                    after his master training with a small number of machines
+                    on his own.
+                  </li>
+                  <li>Two generations later the company had grown and started
+                     to work on more complex and greater projects on behalf of
+                     their clients. As the experience and machine park had grown
+                     over time the ever-since dream of building a very own
+                     designed, engineered and manufactured product got stronger.
+                  </li>
+                  <li>During the midtime of 2019 on a melting hot summer vacation
+                     day on a camping site on the island of Corsica a strange
+                     but also attracting kind of camping vehicle moved along the
+                     water front road where it was spotted by the eyes of Michael
+                     and Heike Walk.
+                  </li>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section id="about-us">
+        <div class="section-content">
+          <div class="container">
+            <div class="heading">
+              <h2 class="heading">about us</h2>
+            </div>
+            <div class="content">
+              <p>1970s</p>
+              <p>In the early 1970s a young family started their summer vacation
+                 heading south to get the next ferry to the marvellous french
+                 island Corsica.
+              </p>
+              <p>A journey that had to be planned smart and effectivly due to
+                 time and costs of the trip. It was a sizzling day when the
+                 vacationists started on a more than 18 hours lasting drive
+                 including long motorway distances, small winding mountain roads
+                 under the soundtracks of Bony M., Meat Loeaf and the Jacksons.
+                 But <strong>enthusiasm</strong> to start these hard-earned
+                 free days was high!
+              </p>
+              <p>A few weeks before the trip was started the construction of
+                 custom camping furniture had begun to build a kitchen area,
+                 cupboards, shelfs, sleeping furniture and more. The daily-used
+                 craftsman bus got rid of the normally contained jigs and tools
+                 and changed their places with the camping furnishing.
+              <p>A routine that lasted nearly two decades was established and
+                 repeated in every available summer holiday time.</p>
+              <p>2018
+              <p>Several decades later </p>
+              <p><span class="cube-logo-font">cube</span></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section id="contact" class="section input-form">
+        <div class="section-content">
+          <div class="container">
+            <div class="heading">
+              <h2 class="heading">
+                <div>welcome to</div>
+                <div><span class="cube-logo-font">cube</span></div>
+              </h2>
+            </div>
+            <div class="contact__content">
+              <p>We are currently creating our market appeareance und developing our
+                 prototype the <span class="cube-logo-font prototype">cube-p-01</span>.</p>
+              <p>To get the latest updates of <span class="cube-logo-font">cube</span> you
+                 can insert your mail and further info below and we will provide you
+                 firsthand with product-details, behind the scenes our motivation and
+                 much more.</p>
+              <p>Stay excited - the <span class="cube-logo-font">cube-team</span>.</p>
+            </div>
+          </div>
+          <div class="seperator">
+            <h4>Get in contact</h4>
+          </div>
+          <div class="form">
+            <form id="contact-form" class="validate-form" name="contact-form"
+                  method="post" action="mailto:n.walk@cube-manufaktur.com?subject=Contact%20Form%20on%20Cube-Manufaktur.com"
+                  enctype="text/plain">
+              <div class="contact-grid">
+                <!-- Input Vorname -->
+                <div class="group validate-input"
+                    data-validate = "Firstname is required">
+                  <input id="firstname" class="input" type="text" name="firstname"
+                      required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Firstname</label>
+                </div>
+
+                <!-- Input Nachname -->
+                <div class="group validate-input"
+                    data-validate = "Surname is required">
+                  <input id="surname" class="input" type="text" name="surname" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Surname</label>
+                </div>
+
+                <!-- Input Adress -->
+                <div class="group validate-input"
+                     data-validate = "Zip-Code is required">
+                  <!-- TODO: only works correctly on required -->
+                  <input id="adress" class="input" type="tel" name="adress" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Zip-Code</label>
+                </div>
+
+                <!-- Input Email -->
+                <div class="group validate-input"
+                     data-validate = "Valid email is required: ex@abc.xyz">
+                  <input id="email" class="input" type="email" name="email" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Email</label>
+                </div>
+              </div>
+
+              <div class="group validate-input">
+                <p>How did you find out about <span class="cube-logo-font">cube</span>?</p>
+                <div class="select">
+                  <select class="form-control" name="marketing" id="marketing">
+                    <option disabled="" selected="" value="">
+                      Choose an option</option>
+                    <option value="schreinereiWalk">business contact (Schreinerei Walk)</option>
+                    <option value="campManWue">business contact (camper manufaktur wue)</option>
+                    <option value="instagramm">Instagramm</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="focus"></span>
+                </div>
+              </div>
+
+              <div class="group validate-input">
+                <p>Any comments or suggestions?</p>
+                <textarea name="comment" id="comment"
+                  placeholder="Enter your comment here..."></textarea>
+              </div>
+              <!-- TODO: pop-up info, if send worked correctly -->
+              <!-- TODO: show it in console -->
+
+              <div class="form-group">
+                <button id="submit" class="submit-button btn-shadow" type="submit" value="submit">Send</button>
+              </div>
+            </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+        <div class="inner-container-footer">
+          <div class="seperator-footer">
+            <h5>Our partners</h5>
+          </div>
+            <p class="link-container footer-partner-hover">
+              <span class="icon-footer">
+                <img id="icon-camper" src="/bilder/Logo_campermanufaktur-wuerzburg.png" alt="icon camper manufaktur">
+              </span>
+              <a class="footer-link-hover" href="https://campermanufaktur-wuerzburg.de" target="_blank">campermanufaktur</a>
+            </p>
+          <p class="link-container footer-partner-hover">
+              <span class="icon-footer">
+                <img id="icon-astronut" src="/bilder/Logo_astronut.png" alt="icon astronut">
+              </span>
+              <a class="footer-link-hover" href="https://astronut.de" target="_blank">
+                astronut design atelier</a>
+              <span class="link-hover-test"></span>
+          </p>
+        </div>
+
+        <div class="inner-container-footer">
+          <div class="seperator-footer">
+            <h5>Contact</h5>
+          </div>
+          <p class="link-container">
+            <a
+              class="footer-link-hover"
+              href="mailto:n.walk@cube-manufaktur.com?subject=Want%20to%20reach%20out%20for%20you%20on%20Cube-Manufaktur.com">n.walk@cube-manfuaktur.com</a></p>
+          <p class="link-container">
+            <a
+            class="footer-link-hover"
+            href="tel:+4993061376">+49 9306 / 1376</a></p>
+        </div>
+        <div class="inner-container-footer">
+          <p>&copy; <span class="pre">2021  <span class="cube-logo-font">cube</span></span>
+          <p>
+            Brand of:
+            <a class="footer-link-hover"
+            href="https://schreinerei-walk.de"
+            target="_blank"><span class="pre">  Schreinerei Walk GmbH</span></a></p>
+          <p>
+            Author: Nicolas Walk</p>
+          <p>
+            <a class="footer-link-hover"
+            href="/en/impressum-en.html"
+            target="_blank">Impressum
+            </a>
+          </p>
+          <p>
+            <a class="footer-link-hover"
+            href="/en/privacy-en.html"
+            target="_blank">Privacy
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--========================== Bootstrap scripts ==============================-->
+    <!-- <script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--==========================main script==============================-->
+    <script src = "/../design.js" type="text/javascript"> </script>
+    <!--===================================================================-->
+  </body>
+</html>

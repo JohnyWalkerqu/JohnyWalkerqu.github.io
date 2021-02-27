@@ -231,6 +231,8 @@ cookieDecline.addEventListener('click', function() {
 // CARDS > Prototype Cabin Turn effect
 var cardPrototype = document.querySelector('.card-prototype');
 var cardBody = document.querySelector('.card-body');
+var cardText = document.querySelector('.card-text');
+console.log(cardText);
 var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
 var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
@@ -238,10 +240,14 @@ var cardZipperClose = document.querySelector('.card__header-close');
 // var cardTurned = document.querySelector('.card-turned');
 
 cardCamIcon.addEventListener('click', () => {
-  console.log('cardZipper clicked');
+  cardPrototype.style.backgroundColor = "transparent";
+  cardBody.classList.add('overlay');
+  console.log('overlay added');
+  cardText.style.visibility = "hidden";
   cardCamIcon.style.display = "none";
-  cardBody.style.display = "none";
-  cardPrototype.classList.add('overlay');
+  console.log('cam icon display:none');
+  cardBody.style.visibility = "hidden";
+  console.log('cardBody visibility:hidden');
 
   // creates div element button
   var newDiv = document.createElement('div');
@@ -285,11 +291,14 @@ cardCamIcon.addEventListener('click', () => {
     // removes the image
     image.parentNode.removeChild(image);
     // removes the overlay properties
-    cardPrototype.classList.remove('overlay');
-    // turns it back to the original place
-    cardBody.style.display = "block";
+    cardBody.classList.remove('overlay');
+    // turns on visibility of card text
+    cardText.style.visibility = "visible";
+    // turns on visibility of complete card body
+    cardBody.style.visibility = "visible";
     // makes the zipper visible again
     cardCamIcon.style.display = "flex";
+    cardPrototype.style.backgroundColor = "var(--backgroundColorSecInput)";
   })
 }
 );
