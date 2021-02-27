@@ -230,6 +230,7 @@ cookieDecline.addEventListener('click', function() {
 // SECTION: CONTENT
 // CARDS > Prototype Cabin Turn effect
 var cardPrototype = document.querySelector('.card-prototype');
+var cardBody = document.querySelector('.card-body');
 var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
 var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
@@ -239,8 +240,8 @@ var cardZipperClose = document.querySelector('.card__header-close');
 cardCamIcon.addEventListener('click', () => {
   console.log('cardZipper clicked');
   cardCamIcon.style.display = "none";
-  cardHeaderZipperBlock.style.gridArea = "1/1/5/7";
-  cardHeaderZipperBlock.classList.add('card-turned');
+  cardBody.style.display = "none";
+  cardPrototype.classList.add('overlay');
 
   // creates div element button
   var newDiv = document.createElement('div');
@@ -259,17 +260,14 @@ cardCamIcon.addEventListener('click', () => {
                                   alt=\"cube draw simple\"> \
                                 </div>';
 
-  cardHeaderZipperBlock.style.display = "flex";
-  cardHeaderZipperBlock.style.justifyContent = "flex-start";
-  cardHeaderZipperBlock.style.alignItems = "flex-start";
   // appends the new div to the existing parent node
   while (newDiv.firstChild) {
-    cardHeaderZipperBlock.appendChild(newDiv.firstChild);
+    cardPrototype.appendChild(newDiv.firstChild);
   }
 
   // appends the new div to the existing parent node
   while (newDivImage.firstChild) {
-    cardHeaderZipperBlock.appendChild(newDivImage.firstChild);
+    cardPrototype.appendChild(newDivImage.firstChild);
   }
 
   // gets the btn element of the card
@@ -286,8 +284,10 @@ cardCamIcon.addEventListener('click', () => {
     cardBtn.parentNode.removeChild(cardBtn);
     // removes the image
     image.parentNode.removeChild(image);
+    // removes the overlay properties
+    cardPrototype.classList.remove('overlay');
     // turns it back to the original place
-    cardHeaderZipperBlock.style.gridArea = "1/6/1/7";
+    cardBody.style.display = "block";
     // makes the zipper visible again
     cardCamIcon.style.display = "flex";
   })
