@@ -46,6 +46,29 @@ menuBtn.addEventListener('click', () => {
     }
 })
 
+// close navbar if menu-item is selected
+$( ".nav-item-mobile" ).click(function() {
+  // to get some time before section is reached
+  setTimeout(function() {
+    console.log('select detected');
+    nav.classList.remove('nav-open');
+    lineOne.classList.remove('line-cross');
+    lineTwo.classList.remove('line-fade-out');
+    lineThree.classList.remove('line-cross');
+    link.classList.remove('fade-in');
+
+    setTimeout(function(){
+      console.log('Timeout fired');
+      navMobile.classList.remove('nav-full-height');
+      navMobileLogo.style.visibility = "visible";
+      // navMobileScroll.style.backgroundColor = "white";
+    }, 800);
+  }, 500);
+})
+
+
+
+
 // get the current window height with: window.innerHeight
 // calculate for desktop
 var windowHeight = window.innerHeight,
@@ -303,36 +326,15 @@ cardCamIcon.addEventListener('click', () => {
 }
 );
 
+// Card - Button Cevron Turn effect
+var cardButtonChevron = document.querySelector('.btn-card-footer');
+var chevronTurn = document.querySelector('.bi-chevron-down');
 
-// RUNNING MINUTES
-// const year = new Date().getFullYear();
-// const month = new Date().getMonth();
-// const choosenDate = new Date(2021, 05, 21).getTime();
-// console.log('choosenDate: ' + choosenDate);
-//
-// let countup = setInterval(function() {
-//   const today = new Date().getTime();
-//   const diff = choosenDate - today;
-//
-//   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-//   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-//   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-//
-//   console.log('Today: ' + today + '/ Diff: ' + diff);
-//   document.getElementById("countup").innerHTML =
-//     "<div class=\"days\"> \
-//     <div class=\"c-number\">" + days + ' : '+ "</div></div> \
-//     <div class=\"hours\"> \
-//     <div class=\"c-number\">" + hours + ' : '+ "</div></div> \
-//     <div class=\"minutes\"> \
-//     <div class=\"c-number\">" + minutes + ' : '+ "</div></div> \
-//     <div class=\"seconds\"> \
-//     <div class=\"c-number\">" + seconds + "</div></div> \
-//     <div class=\"left\"></div>\
-//     </div>";
-//
-// }, 1000);
+$( ".btn-card-footer" ).click(function() {
+  // adds .bi-chevron-down-collapse on click
+  // removes .btn-shadow on click
+  $( this ).toggleClass( "bi-chevron-down-collapse btn-shadow" );
+})
 
 
 // CONTACT FORM

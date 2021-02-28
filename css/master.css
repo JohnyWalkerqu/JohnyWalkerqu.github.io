@@ -42,6 +42,7 @@
 
   --fontColorBodySVG: invert(40%) sepia(0%) saturate(912%) hue-rotate(261deg) brightness(95%) contrast(88%);
   --fontColorClearSVG: invert(100%) sepia(0%) saturate(0%) hue-rotate(73deg) brightness(115%) contrast(101%);
+  --fontColorNavMobileSVG: invert(88%) sepia(8%) saturate(318%) hue-rotate(342deg) brightness(92%) contrast(91%);
 
   --colorSignal: yellow;
   /* background-image */
@@ -124,6 +125,29 @@ body, html {
   width: 100%;
 }
 
+/* SCROLLBAR */
+
+/* style in firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fontColorBody) lightGrey;
+}
+
+/* works on Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  background: lightGrey;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--fontColorBody); /* scroll thumb */
+  border-radius: 20px;
+  border: 3px solid lightGrey;  /* creates padding around scroll thumb */
+}
+
 h1 {
   font-size:1.75em;
   color:  var(--lightBg);
@@ -196,6 +220,10 @@ div.font-size-small {
   letter-spacing: 0.3em;
   /* padding-left: 0.2em; */
   /* padding-right: 0.2em; */
+}
+
+.no-space {
+  letter-spacing: 0;
 }
 
 /*
@@ -491,7 +519,7 @@ nav .nav-brand {
 nav .menu-btn {
   position: absolute;
   right: 10px;
-  margin-top: 2vh;
+  margin-top: 3vh;
   width: 30px;
   height: auto;
   cursor: pointer;
@@ -590,6 +618,10 @@ nav .nav-links .link {
    icon hover effect */
 a.icon-hover:hover {
     color: rgba(100, 0, 0, .3);
+}
+
+#cube-icon-nav:hover {
+  filter: var(--fontColorNavMobileSVG);
 }
 
 nav a {
@@ -1169,8 +1201,8 @@ add class on scroll */
   align-items: center;
 }
 
-.card-title-text-w60 {
-  width: 60%;
+.card-title-text-w90 {
+  width: 90%;
 }
 
 .font-color-body {
@@ -1278,13 +1310,27 @@ add class on scroll */
 }
 
 .card-footer-button {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: transparent;
   margin-bottom: 0;
 }
 
 /* adjusts the button over the complete width */
 .btn-card-footer {
   display: flex;
+  padding: 4% 4%;
+}
+
+a.btn {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__footer {
@@ -1472,12 +1518,25 @@ i.animation {
     margin-left: 5px;
   }
 
+  .bi-chevron-down-collapse {
+    font-size: 20px;
+    color: rgba(255,255,255, .5);
+    /* turned to normal shadow setting */
+    box-shadow: 0px -14px 28px rgba(0,0,0,0.25), 0px -10px 10px rgba(0,0,0,0.22);
+    transform: rotateX(180deg);
+    transition: all 2s cubic-bezier(0.080, 1.090, 0.320, 1.275);
+  }
+
+.fa-rotate-180 {
+  color: rgba(255,255,255, 1);
+}
+
 /*
 ZIPPER SETTINGS
 */
 .card__header-zipper {
   /* grid-area: 1 / 6 / 1 / 6; */
-  width: 40%;
+  width: 10%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1646,6 +1705,7 @@ Animation
 
 .form-control {
   background-color: transparent;
+  border: none;
 }
 
 section {
@@ -2097,7 +2157,15 @@ footer a {
 
 .footer-link-hover:hover {
   border-bottom: 1px dashed var(--colorSignal);
+  text-decoration: none;
   color: var(--fontColorClear);
+  transition: all 1s ease;
+}
+
+.footer-link-hover-color-body:hover {
+  border-bottom: 1px dashed var(--colorSignal);
+  text-decoration: none;
+  color: var(--fontColorBody);
   transition: all 1s ease;
 }
 
@@ -2300,7 +2368,7 @@ GENERAL SETTINGS
     grid-template-columns: repeat(2, minmax(300px, 500px));
   }
 
-  .card-about-us {
+  .card-cube {
     grid-area: 2 / 1 / 3 / 3;
   }
 }
