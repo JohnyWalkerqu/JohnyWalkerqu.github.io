@@ -189,6 +189,7 @@ a {
 h2 {
   font-family: 'cube-font';
   font-size: 1.75em;
+  word-wrap: break-word;
 }
 
 h3 {
@@ -282,6 +283,11 @@ div.font-size-small {
 
 #cookie-link:hover {
   color: var(--fontColorBody);
+}
+
+/* COOKIE SETTINGS BUTTON */
+#open-cookie-settings {
+  display: none;
 }
 
 /* MODAL SETTINGS */
@@ -519,7 +525,8 @@ nav .nav-brand {
 nav .menu-btn {
   position: absolute;
   right: 10px;
-  margin-top: 3vh;
+  /* margin-top: 3vh; */
+  align-self: center;
   width: 30px;
   height: auto;
   cursor: pointer;
