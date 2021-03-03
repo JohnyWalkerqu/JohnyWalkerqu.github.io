@@ -158,6 +158,8 @@ h1 {
 }
 
 a {
+  /* prevents seperation of links */
+  display: inline-block;
   text-decoration: none;
   color: white;
 }
@@ -174,22 +176,19 @@ a {
   -ms-user-select: none;
 }
 
-  .logo-small {
-    max-width: 4em;
-  }
+  .logo-small { max-width: 4em; }
 
-  .grey {
-    filter: var(--fontColorBodySVG);
-  }
+  .grey { filter: var(--fontColorBodySVG); }
 
-  .white {
-    filter: var(--fontColorClearSVG);
-  }
+  .white { filter: var(--fontColorClearSVG); }
+
+  .lightGreen { filter: invert(94%) sepia(7%) saturate(147%) hue-rotate(90deg) brightness(96%) contrast(89%); }
 
 h2 {
   font-family: 'cube-font';
   font-size: 1.75em;
   word-wrap: break-word;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -203,6 +202,12 @@ h5 {
 
 p {
   font-size: var(--fontSizeP);
+}
+
+.justy-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.font-size-small {
@@ -384,15 +389,12 @@ section.landing {
 }
 
 /* BACKGROUND */
-.landing-background-image {
+.landing-background-settings {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: url('/bilder/road-381227_1920.jpg');
-  /* background-image: url('/bilder/pexels-veeterzy-39811.jpg'); */
-  /* background-image: url('/bilder/pexels-tobias-bjørkli-2715004.jpg'); */
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
@@ -403,16 +405,36 @@ section.landing {
   -webkit-filter: blur(8px); */
 }
 
+.default {
+  background-image: url('/bilder/road-381227_1920.jpg');
+  /* background-image: url('/bilder/pexels-veeterzy-39811.jpg'); */
+  /* background-image: url('/bilder/pexels-tobias-bjørkli-2715004.jpg'); */
+}
+
+.switch-background-left {
+  background-image: url('/bilder/pexels-veeterzy-39811.jpg');
+}
+
+.switch-background-right {
+  background-image: url('/bilder/pexels-simon-berger-748837.jpg');
+}
+
 /* change background */
 .switch-background {
   position: absolute;
   cursor: pointer;
   top: 50%;
-  left: 0;
   width: 10%;
   height: 50%;
   z-index: 3000;
 }
+
+  .switch-left { left: 0; }
+  .switch-right { right: 0 }
+
+/* change nav items style */
+  .border-dg { border-color: #242d36; }
+  .color-dg { color: #242d36; }
 
 .carousel { z-index: -99 }
 .carousel .item {
@@ -1417,9 +1439,9 @@ a.btn {
 .elements {
   display: flex;
   flex-direction: column;
-  width: 20%;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /* apply a border to the left for every item
@@ -1435,6 +1457,12 @@ div.card__footer-elements:last-child {
 .text {
   width: 80%;
   font-size: var(--fontSizeP);
+}
+
+.card-collapse-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*
@@ -1717,9 +1745,9 @@ Animation
   cursor: pointer;
 
   /* animation */
-  -webkit-animation: btn-close-overlay 400ms ease-in;
+  /* -webkit-animation: btn-close-overlay 400ms ease-in;
   -moz-animation: btn-close-overlay 400ms ease-in;
-   animation: btn-close-overlay 400ms ease-in;
+   animation: btn-close-overlay 400ms ease-in; */
 }
 
 /* animation declaration */
@@ -2209,8 +2237,31 @@ footer a {
 /* adds a transparent border, through This
    the hover effect does NOT MOVE the element
    when the underline effect is shown */
-.footer-link-hover {
-  border-bottom: 1px dashed transparent;
+
+.hover-bb-dashed {
+  border-bottom: 0.5px dashed transparent;
+}
+
+.co-white {
+  color: var(--fontColorClear);
+}
+
+.co-body {
+  color: var(--fontColorForm);
+}
+
+.hover-co-white-bb-yellow:hover {
+  border-bottom: 1px dashed var(--colorSignal);
+  text-decoration: none;
+  color: var(--fontColorClear);
+  transition: all 1s ease;
+}
+
+.hover-co-body-bb-body:hover {
+  border-bottom: 1px dashed var(--fontColorBody);
+  text-decoration: none;
+  color: var(--fontColorBody);
+  transition: all 1s ease;
 }
 
 .footer-link-hover:hover {

@@ -127,40 +127,28 @@ var backgroundImage = document.querySelector('.landing-background-image'),
     card = document.querySelector('.card'),
     sectionContact = document.querySelector('.input-form');
 
-$( ".switch-background" ).click(function() {
-  // creates div element
-  // var newDiv = document.createElement('div');
-  // // defines inner HTML of the div
-  // newDiv.innerHTML = '<div \
-  //                       id=\"carouselExampleIndicators\" class=\"carousel container slide\" data-ride=\"carousel\"> \
-  //                         <ol class=\"carousel-inner\"> \
-  //                           <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li> \
-  //                           <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li> \
-  //                           <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li> \
-  //                         </ol> \
-  //                         <div class=\"carousel-inner\"> \
-  //                           <div class=\"active item one\"></div> \
-  //                           <div class=\"item two\"></div> \
-  //                           <div class=\"item three\"></div> \
-  //                         </div> \
-  //                         <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\"> \
-  //                           <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span> \
-  //                           <span class=\"sr-only\">Previous</span> \
-  //                         </a> \
-  //                         <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\"> \
-  //                           <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span> \
-  //                           <span class=\"sr-only\">Next</span> \
-  //                         </a> \
-  //                       </div>'
-  // // removes .btn-shadow on click
-  // // appends the new div to the existing parent node
-  // while (newDiv.firstChild) {
-  //   sectionHome.appendChild(newDiv.firstChild);
-  // }
-  backgroundImage.style.backgroundImage = "url(\'/bilder/pexels-veeterzy-39811.jpg\')";
-  card.style.backgroundColor = "#d2a873";
-  sectionContact.style.backgroundColor = "#d2a873";
+$( ".switch-left" ).click(function() {
+  console.log('switch clicked left');
+  $( ".landing-background-settings" ).toggleClass( "switch-background-left" );
+  $( ".logo" ).toggleClass( "grey lightGreen" );
+
+  // iterate through each object with same class
+  // $(".grey").each(function(i, obj) {
+  //   $( this ).toggleClass( "border-dg color-dg");
+  // })
+
 })
+
+$( ".switch-right" ).click(function() {
+  // adds .bi-chevron-down-collapse on click
+  // removes .btn-shadow on click
+  console.log('switch clicked right');
+  $( ".landing-background-settings" ).toggleClass( "default switch-background-right" );
+})
+
+  // backgroundImage.style.backgroundImage = "url(\'/bilder/pexels-veeterzy-39811.jpg\')";
+  // card.style.backgroundColor = "#d2a873";
+  // sectionContact.style.backgroundColor = "#d2a873";
 
 
 // COOKIE BAR
