@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de" dir="ltr">
   <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -438,28 +438,33 @@
                   </div>
 
                   <div class="card-footer-button">
-                    <a class="btn btn-primary btn-shadow btn-card-footer"
-                       data-toggle="collapse"
-                       href="#collapseButton"
-                       role="button"
-                       aria-expanded="false"
-                       aria-controls="collapseButton">
-                       <i class="bi bi-chevron-down"></i>
-                    </a>
+                      <a class="btn btn-primary btn-shadow btn-card-footer"
+                         data-toggle="collapse"
+                         href="#collapseButton"
+                         role="button"
+                         aria-expanded="false"
+                         aria-controls="collapseButton">
+                         <i class="bi bi-chevron-down"></i>
+                      </a>
+                      <p class="justy-align ml-2 mt-mb-auto">Produktinformationen</p>
                   </div>
 
                   <div class="collapse" id="collapseButton">
-                    <div class="card card-body">
+                    <div class="card-collapsed card-body">
 
                       <!-- start of accordion -->
                       <div class="accordion" id="accordionExample">
 
                         <!-- accordion item 1 -->
-                        <div class="">
+                        <div class="card-collapsed-header-container"
+                             data-toggle="collapse"
+                             data-target="#collapseOne"
+                             aria-expanded="true"
+                             aria-controls="collapseOne">
                           <div class="card-header card-collapse-header" id="headingOne">
                             <h5 class="mb-0 justy-align">
-                              <div class="elements" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="bi bi-crop mb-2"></i>
+                              <div class="elements">
+                                <i class="bi bi-crop bi-colappse-icon mb-2"></i>
                                 <p class="my-0 text-center">Maße</p>
                                 <p class="my-0 text-center">Gewichte</p>
                               </div>
@@ -490,11 +495,15 @@
                         </div>
 
                         <!-- accordion item 2 -->
-                        <div class="">
+                        <div class="card-collapsed-header-container"
+                             data-toggle="collapse"
+                             data-target="#collapseTwo"
+                             aria-expanded="true"
+                             aria-controls="collapseTwo">
                           <div class="card-header card-collapse-header" id="headingTwo">
                             <h5 class="mb-0">
-                              <div class="elements" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="bi bi-stack mb-2"></i>
+                              <div class="elements">
+                                <i class="bi bi-stack bi-colappse-icon mb-2"></i>
                                 <p class="my-0 text-center">Materialien</p>
                                 <p class="my-0 text-center">Komponenten</p>
                               </div>
@@ -532,10 +541,14 @@
                         </div>
 
                         <!-- accordion item 3 -->
-                        <div class="">
+                        <div class="card-collapsed-header-container"
+                             data-toggle="collapse"
+                             data-target="#collapseThree"
+                             aria-expanded="true"
+                             aria-controls="collapseThree">
                           <div class="card-header card-collapse-header" id="headingThree">
                             <h5 class="mb-0">
-                              <div class="elements" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                              <div class="elements">
                                 <!-- property sets margin bottom to 0 -->
                                 <i class="mb-2">
                                   <img
@@ -571,7 +584,7 @@
                                   deutlich größeren Campingbauten zu finden ist.
                                 </p>
                                 <p>Zur abschließenden Bestimmung der Innen- und Außenausstattung
-                                  wird der <span class="cube-font-logo">p-0<span class="no-space">1</span></span>
+                                  wird der <span class="cube-logo-font">p-0<span class="no-space">1</span></span>
                                   über mehrere Wochen von unterschiedlichen Personen
                                   getestet und Optimierungen durchgeführt. Hier wird
                                   dann nochmals der modulare Ansatz der hohen Individualisierbarkeit
@@ -782,7 +795,7 @@
             <!-- TODO: show it in console -->
 
             <div class="form-group">
-              <button id="submit" class="submit-button btn-shadow btn" type="submit" value="submit">Senden</button>
+              <button id="submit" class="submit-button btn-shadow btn-send btn-primary btn" type="submit" value="submit">Senden</button>
             </div>
           </form>
         </div>

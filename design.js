@@ -296,6 +296,7 @@ cardCamIcon.addEventListener('click', () => {
   cardBody.classList.add('overlay');
   console.log('overlay added');
   cardText.style.visibility = "hidden";
+  cardText.style.display = "none";
   cardCamIcon.style.display = "none";
   console.log('cam icon display:none');
   cardBody.style.visibility = "hidden";
@@ -346,6 +347,7 @@ cardCamIcon.addEventListener('click', () => {
     cardBody.classList.remove('overlay');
     // turns on visibility of card text
     cardText.style.visibility = "visible";
+    cardText.style.display = "block";
     // turns on visibility of complete card body
     cardBody.style.visibility = "visible";
     // makes the zipper visible again
