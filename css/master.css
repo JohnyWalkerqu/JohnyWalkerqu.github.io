@@ -106,11 +106,6 @@ html {
   text-rendering: optimizeLegibility;
   width: 100%;
   scroll-behavior: smooth;
-
-  /* sets hyphens on */
-  -webkit-hyphens: auto;
- -moz-hyphens: auto;
-  hyphens: auto;
 }
 
 body {
@@ -168,6 +163,7 @@ a {
   /* prevents seperation of links */
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
   color: white;
 }
 
@@ -196,9 +192,14 @@ h2 {
   font-size: 1.75em;
   word-wrap: break-word;
   margin-bottom: 1.5rem;
-}
 
+  /* sets hyphens on */
+  -webkit-hyphens: auto;
+ -moz-hyphens: auto;
+  hyphens: auto;
+}
 h3 {
+
   font-family: 'cube-font';
   font-size: 1.5em;
 }
@@ -295,7 +296,6 @@ div.font-size-small {
 
 #cookie-link {
   color: var(--fontColorBody);
-  text-decoration: underline;
 }
 
 #cookie-link:hover {
@@ -606,7 +606,7 @@ nav .nav-brand {
 
 nav .menu-btn {
   position: absolute;
-  right: 10px;
+  right: 20px;
   /* to align it perfectly with the logo  */
   top: 3.67vh;
   /* margin-top: 3vh; */
@@ -1431,6 +1431,7 @@ add class on scroll */
   height: 80px;
   background-color: transparent;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 /* adjusts the button over the complete width */
