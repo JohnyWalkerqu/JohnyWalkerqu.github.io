@@ -284,7 +284,6 @@ cookieDecline.addEventListener('click', function() {
 var cardPrototype = document.querySelector('.card-prototype');
 var cardBody = document.querySelector('.card-body');
 var cardText = document.querySelector('.card-text');
-console.log(cardText);
 var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
 var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
@@ -352,7 +351,7 @@ cardCamIcon.addEventListener('click', () => {
     cardBody.style.visibility = "visible";
     // makes the zipper visible again
     cardCamIcon.style.display = "flex";
-    cardPrototype.style.backgroundColor = "var(--backgroundColorSecInput)";
+    // cardPrototype.style.backgroundColor = "var(--backgroundColorSecInput)";
   })
 }
 );
