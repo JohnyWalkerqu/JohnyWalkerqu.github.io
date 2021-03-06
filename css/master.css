@@ -1326,6 +1326,11 @@ add class on scroll */
   border: none;
 }
 
+.card-collapsed:last-child {
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
   .card-collapsed-header-container {
     cursor: pointer;
   }
