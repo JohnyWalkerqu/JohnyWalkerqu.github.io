@@ -1346,14 +1346,20 @@ add class on scroll */
 /* CARD OVERLAY or TURNED CARD */
 .overlay {
   display: flex;
+  position: absolute;
   justify-content: flex-start;
   align-items: flex-start;
   background: #fff;
-  position: absolute;
-  width: 99%;
-  height: 99%;
+  height: 500px;
+  width: 100%;
   left: 0;
   top: 0;
+
+  /* settings of .card */
+  border-radius: 14px;
+  box-shadow: -1px 15px 30px -12px black;
+  border: none;
+  z-index: 1000;
   /* -webkit-transition: all 0.4s ease-in-out 0s;
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s; */
@@ -1399,8 +1405,9 @@ add class on scroll */
 .bi-camera {
   display: flex;
   cursor: pointer;
-  margin-right: 2px;
-  margin-top: 2px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 
 .font-capitalize {
@@ -1781,9 +1788,19 @@ Animation
 }
 
 .btn-card {
-  width: 10%;
-  height: 10%;
-  cursor: pointer;
+  /* display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 10%; */
+}
+  /* X icon */
+  .btn-card > i:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 2;
+  }
 
   /* animation */
   /* -webkit-animation: btn-close-overlay 400ms ease-in;
@@ -2288,7 +2305,6 @@ footer a {
 /* adds a transparent border, through This
    the hover effect does NOT MOVE the element
    when the underline effect is shown */
-
 .hover-bb-dashed {
   border-bottom: 0.5px dashed transparent;
 }
@@ -2302,14 +2318,14 @@ footer a {
 }
 
 .hover-co-white-bb-yellow:hover {
-  border-bottom: 1px dashed var(--colorSignal);
+  border-bottom: 0.5px dashed var(--colorSignal);
   text-decoration: none;
   color: var(--fontColorClear);
   transition: all 1s ease;
 }
 
 .hover-co-body-bb-body:hover {
-  border-bottom: 1px dashed var(--fontColorBody);
+  border-bottom: 0.5px dashed var(--fontColorBody);
   text-decoration: none;
   color: var(--fontColorBody);
   transition: all 1s ease;
@@ -2520,6 +2536,11 @@ GENERAL SETTINGS
 
   .card__container-content {
     grid-template-columns: repeat(2, minmax(300px, 500px));
+  }
+
+  #card-about-us {
+    /* sets card on complete screen under the two other cards */
+    grid-area: 2 / 1 / 2 / 3;
   }
 
   .section-content {

@@ -16,8 +16,6 @@ var lineThree = document.querySelector('nav .menu-btn .line--3');
 var link = document.querySelector('nav .nav-links');
 var logoColor = document.querySelector('.logo');
 
-console.log(logoColor);
-
 menuBtn.addEventListener('click', () => {
     var navMobileScroll = document.querySelector('.nav--scroll-mobile');
     nav.classList.add('nav-full-height');
@@ -31,13 +29,10 @@ menuBtn.addEventListener('click', () => {
     link.classList.toggle('fade-in');
 
     if (nav.classList.contains('nav-open')) {
-      console.log('Nav-Mobile is open');
     }
     else {
-      console.log('Nav-Mobile is closed');
       // function to remove class after the menu-bar is completely closed
       setTimeout(function(){
-        console.log('Timeout fired');
         navMobile.classList.remove('nav-full-height');
         navMobileLogo.style.visibility = "visible";
         // navMobileScroll.style.backgroundColor = "white";
@@ -50,7 +45,6 @@ menuBtn.addEventListener('click', () => {
 $( ".nav-item-mobile" ).click(function() {
   // to get some time before section is reached
   setTimeout(function() {
-    console.log('select detected');
     nav.classList.remove('nav-open');
     lineOne.classList.remove('line-cross');
     lineTwo.classList.remove('line-fade-out');
@@ -58,7 +52,6 @@ $( ".nav-item-mobile" ).click(function() {
     link.classList.remove('fade-in');
 
     setTimeout(function(){
-      console.log('Timeout fired');
       navMobile.classList.remove('nav-full-height');
       navMobileLogo.style.visibility = "visible";
       // navMobileScroll.style.backgroundColor = "white";
@@ -87,19 +80,16 @@ document.addEventListener('scroll', function() {
   // for a smooth background-color change
 
   // if (scrollPosition > 1 && scrollPosition < 20) {
-  //   console.log(scrollPosition);
   //   navMobile.classList.toggle('scroll-effect');
   // }
 
   // if (scrollPosition > windowNavDesktopOffset) {
-  //   console.log(scrollPosition + 'scrollPosition > windowNavDesktop');
   //   navDesktop.classList.add('scroll-effect');
   //   navDesktop.classList.add('nav--scroll-desktop');
   //   navMobile.classList.add('nav--scroll-mobile');
   // }
 
   if (scrollPosition > 50) {
-    console.log(scrollPosition + 'scrollPosition > windowNavDesktop');
     navDesktop.classList.add('nav--scroll-desktop');
     navMobile.classList.add('nav--scroll-mobile');
     // logoColor.classList.add('grey');
@@ -108,12 +98,10 @@ document.addEventListener('scroll', function() {
 
   // if (scrollPosition > 50 && scrollPosition < 51) {
   //   navDesktop.classList.add('scroll-effect');
-  //   console.log('class .scroll-effect removed at scrollPosition: ' + scrollPosition);
   // }
 
   // removes the background-color if the frame reaches the top level again
   else {
-    console.log('class removed: nav--scroll-desktop');
     navDesktop.classList.remove('nav--scroll-desktop');
     navMobile.classList.remove('nav--scroll-mobile');
     // logoColor.classList.remove('grey');
@@ -128,7 +116,6 @@ var backgroundImage = document.querySelector('.landing-background-image'),
     sectionContact = document.querySelector('.input-form');
 
 $( ".switch-left" ).click(function() {
-  console.log('switch clicked left');
   $( ".landing-background-settings" ).toggleClass( "switch-background-left" );
   $( ".logo" ).toggleClass( "grey lightGreen" );
 
@@ -142,7 +129,6 @@ $( ".switch-left" ).click(function() {
 $( ".switch-right" ).click(function() {
   // adds .bi-chevron-down-collapse on click
   // removes .btn-shadow on click
-  console.log('switch clicked right');
   $( ".landing-background-settings" ).toggleClass( "default switch-background-right" );
 })
 
@@ -171,7 +157,6 @@ let cookieAccept = document.getElementById('accept-cookie'),
     cookieBox = document.querySelector('.cookie-bar');
 
 cookieAccept.addEventListener('click', function() {
-  console.log('Accept clicked');
 
   if (cookieBox.classList.contains('hidden')) {
     cookieBox.classList.remove('hidden');
@@ -194,7 +179,6 @@ cookieAccept.addEventListener('click', function() {
 }, false);
 
 cookieDecline.addEventListener('click', function() {
-  console.log('Decline clicked');
 
   if (cookieBox.classList.contains('hidden')) {
     cookieBox.classList.remove('hidden');
@@ -281,9 +265,9 @@ cookieDecline.addEventListener('click', function() {
 
 // SECTION: CONTENT
 // CARDS > Prototype Cabin Turn effect
+var cardPrototypeOne = document.getElementById('card-prototype');
 var cardPrototype = document.querySelector('.card-prototype');
 var cardBody = document.querySelector('.card-body');
-var cardText = document.querySelector('.card-text');
 var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
 var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
@@ -291,15 +275,12 @@ var cardZipperClose = document.querySelector('.card__header-close');
 // var cardTurned = document.querySelector('.card-turned');
 
 cardCamIcon.addEventListener('click', () => {
-  cardPrototype.style.backgroundColor = "transparent";
+  cardPrototype.style.backgroundColor = "#fff";
+  cardPrototype.style.height = "500px";
+  cardPrototype.classList.add('justy-align');
   cardBody.classList.add('overlay');
-  console.log('overlay added');
-  cardText.style.visibility = "hidden";
-  cardText.style.display = "none";
   cardCamIcon.style.display = "none";
-  console.log('cam icon display:none');
   cardBody.style.visibility = "hidden";
-  console.log('cardBody visibility:hidden');
 
   // creates div element button
   var newDiv = document.createElement('div');
@@ -307,6 +288,7 @@ cardCamIcon.addEventListener('click', () => {
   newDiv.innerHTML = '<div class=\"btn-card\"> \
                         <i class=\"bi bi-x\"></i> \
                       </div>';
+
 
   // creates div element image
   var newDivImage = document.createElement('div');
@@ -345,12 +327,12 @@ cardCamIcon.addEventListener('click', () => {
     // removes the overlay properties
     cardBody.classList.remove('overlay');
     // turns on visibility of card text
-    cardText.style.visibility = "visible";
-    cardText.style.display = "block";
     // turns on visibility of complete card body
     cardBody.style.visibility = "visible";
     // makes the zipper visible again
     cardCamIcon.style.display = "flex";
+    cardPrototype.style.height = "auto";
+    cardPrototype.classList.remove('justy-align');
     // cardPrototype.style.backgroundColor = "var(--backgroundColorSecInput)";
   })
 }
@@ -378,10 +360,6 @@ submit.addEventListener('click', () => {
     var surname = document.getElementById("surname").value;
     var adress = document.getElementById("adress").value;
     var email = document.getElementById("email").value;
-    console.log(firstname);
-    console.log(surname);
-    console.log(adress);
-    console.log(email);
     if (validation()) {// Calling validation function
       form.submit(); //form submission
       alert(" firstname : " + firstname +
@@ -411,6 +389,9 @@ submit.addEventListener('click', () => {
     }
     else {
       return true;
+        // <div class="alert alert-success" role="alert">
+        // This is a success alert—check it out!
+        // </div>
     }
   }
 });
