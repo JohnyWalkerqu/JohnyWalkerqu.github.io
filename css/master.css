@@ -232,7 +232,7 @@ div.font-size-small {
   white-space: pre;
 }
 
-.cube-logo-font {
+.font-cube {
   display: inline-block;
   font-size: var(--fontSizeCube);
   text-transform: uppercase;
