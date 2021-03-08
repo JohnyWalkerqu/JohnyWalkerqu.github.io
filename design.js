@@ -296,7 +296,7 @@ cardCamIcon.addEventListener('click', () => {
   newDivImage.innerHTML = '<div \
                                 class=\"image-cube-drawing-simple\"> \
                                 <img id = \"image-card-turned\" \
-                                  src=\"/bilder/Cube-draw-simple.png\" \
+                                  src=\"/content/images/Cube-draw-simple.png\" \
                                   alt=\"cube draw simple\"> \
                                 </div>';
 

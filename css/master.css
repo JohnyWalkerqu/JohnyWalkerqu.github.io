@@ -64,19 +64,20 @@
 
   /* FONT SIZES */
 
-  --baseFontSize: 1.75em;
-  --fontSizeNavDesktop: 0.5em;
-  --fontSizeForm : 0.8em;
+  --basicF: 1em;
+  --baseFontSize:       calc(var(--basicF) * 1.75);
+  --fontSizeNavDesktop: calc(var(--basicF) * 0.5);
+  --fontSizeForm :      calc(var(--basicF) * 0.8);
   /* size of the paragraphs */
-  --fontSizeP: 0.6em;
+  --fontSizeP:          calc(var(--basicF) * 0.6);
   /* size of paragraphs smaller */
-  --fontSizePsmall: 0.5em;
+  --fontSizePsmall:     calc(var(--basicF) * 0.5);
   /* written C U B E within the text */
-  --fontSizeCube: 1em;
+  --fontSizeCube:       calc(var(--basicF) * 1.0);
   /* size of the active labels within the contact form */
-  --fontSizeLabel: 0.6em;
+  --fontSizeLabel:      calc(var(--basicF) * 0.6);
   /* size footer */
-  --fontSizeFooter: 0.7em;
+  --fontSizeFooter:     calc(var(--basicF) * 0.7);
 
   /* FONT-FAMILY */
   --baseFontFamily: 'cube-font', sans-serif;
@@ -418,17 +419,17 @@ section.landing {
 }
 
 .default {
-  background-image: url('/bilder/road-381227_1920.jpg');
+  background-image: url('/content/images/road-381227_1920.jpg');
   /* background-image: url('/bilder/pexels-veeterzy-39811.jpg'); */
   /* background-image: url('/bilder/pexels-tobias-bjørkli-2715004.jpg'); */
 }
 
 .switch-background-left {
-  background-image: url('/bilder/pexels-veeterzy-39811.jpg');
+  background-image: url('/content/images/pexels-veeterzy-39811.jpg');
 }
 
 .switch-background-right {
-  background-image: url('/bilder/pexels-simon-berger-748837.jpg');
+  background-image: url('/content/images/pexels-simon-berger-748837.jpg');
 }
 
 /* change background */
@@ -2114,6 +2115,10 @@ button {
   cursor: pointer;
 }
 
+.submit-button {
+  padding: 2.5% 7%;
+}
+
 .btn-shadow {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -2555,11 +2560,17 @@ GENERAL SETTINGS
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 2em;
     align-items: self-end;
+    width: 60%;
   }
 
   #comment {
     height: 100%;
     min-height: 400px;
+  }
+
+  /* align send button higher */
+  .form-group {
+    align-self: flex-start;
   }
 
   .firstname {
