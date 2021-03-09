@@ -1840,20 +1840,32 @@ Animation
 }
 
 .form-control {
-  color: var(--fontColorForm);
-  background-color: transparent;
+  background-color: var(--backgroundColorSecInput);
+  /* color: var(--fontColorForm); */
   border: none;
 }
+
+#marketing {
+  background-color: var(--backgroundColorSecInput);
+}
+
+.form-control > option {
+  background-color: white;
+}
+
 
 section {
   min-height: 200px;
   background-color: white;
 }
 
+#cube-section {
+  padding-bottom: 5%;
+}
+
 .section-content {
   margin-left: 5%;
   margin-right: 5%;
-  padding-bottom: 5%;
   padding-top: 5%;
 }
 
@@ -2408,10 +2420,6 @@ header.privacy {
   margin-top: 20vh;
 }
 
-.privacy-content ul {
-  font-size: var(--fontSizeP);
-}
-
 #privacy-center {
   justify-content: center;
 }
@@ -2419,6 +2427,10 @@ header.privacy {
 .privacy-content a {
   color: inherit;
   text-decoration: underline;
+}
+
+.double-nested-list {
+  font-size: var(--fontSizeP);
 }
 
 /*
@@ -2545,19 +2557,13 @@ GENERAL SETTINGS
     grid-area: 2 / 1 / 2 / 3;
   }
 
-  .section-content {
-    /* change gap to next section */
-    padding-bottom: 2%;
-    padding-top 2%;
-  }
-
   /* change layout of contact form input fields */
   #contact-form {
     grid-template-columns: auto auto;
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 2em;
     align-items: self-end;
-    width: 60%;
+    width: 70%;
   }
 
   #comment {
