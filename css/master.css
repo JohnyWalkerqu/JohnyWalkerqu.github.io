@@ -245,6 +245,7 @@ div.font-size-small {
     COOKIE SETTINGS
 ======================== */
 .cookie-bar {
+    display: none;
     background: #f8f8f8;
     text-align: center;
     position: fixed;
@@ -697,6 +698,7 @@ nav .nav-links .link {
 
 .link-language {
   font-weight: normal;
+  visibility: hidden;
 }
 
 /* NAV MOBILE
@@ -770,6 +772,7 @@ social media icons */
 nav .layout-social-media {
   position: absolute;
   top: 80vh;
+  visibility: hidden;
 }
 
 nav .social-media {
