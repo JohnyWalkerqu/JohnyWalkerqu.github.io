@@ -786,6 +786,7 @@ nav .social-media a {
 
 /* Language Selector */
 nav .layout-language-selector {
+  visibility: hidden;
   position: absolute;
   display: flex;
   flex-direction: row;
