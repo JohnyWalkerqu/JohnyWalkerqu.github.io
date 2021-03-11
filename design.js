@@ -137,6 +137,7 @@ $( ".switch-right" ).click(function() {
   // sectionContact.style.backgroundColor = "#d2a873";
 
 
+
 // COOKIE BAR
 /*
 Cookie bar
@@ -151,114 +152,157 @@ Clicking [cookie settings]
 */
 
 // definition of the variables
-let cookieAccept = document.getElementById('accept-cookie'),
-    cookieDecline = document.getElementById('decline-cookie'),
-    cookieSettings = document.getElementById('open-cookie-settings')
-    cookieBox = document.querySelector('.cookie-bar');
+// let cookieAccept = document.getElementById('accept-cookie'),
+//     cookieDecline = document.getElementById('decline-cookie'),
+//     cookieSettings = document.getElementById('open-cookie-settings')
+//     cookieBox = document.querySelector('.cookie-bar');
+//
+// cookieAccept.addEventListener('click', function() {
+//
+//   if (cookieBox.classList.contains('hidden')) {
+//     cookieBox.classList.remove('hidden');
+//     setTimeout(function() {
+//       cookieBox.classList.remove('visuallyhidden');
+//     }, 20);
+//   }
+//   else {
+//     cookieBox.classList.add('visuallyhidden');
+//     cookieBox.addEventListener('transitioned', function(e) {
+//       setTimeout(function() {
+//         cookieBox.classList.add('hidden');
+//       }, 1000);
+//     }, {
+//     capture: false,
+//     once: true,
+//     passive: false
+//   });
+// }
+// }, false);
+//
+// cookieDecline.addEventListener('click', function() {
+//
+//   if (cookieBox.classList.contains('hidden')) {
+//     cookieBox.classList.remove('hidden');
+//     setTimeout(function() {
+//       cookieBox.classList.remove('visuallyhidden');
+//     }, 20);
+//   }
+//   else {
+//     cookieBox.classList.add('visuallyhidden');
+//     cookieBox.addEventListener('transitioned', function(e) {
+//       setTimeout(function() {
+//         cookieBox.classList.add('hidden');
+//       }, 1000);
+//     }, {
+//     capture: false,
+//     once: true,
+//     passive: false
+//   });
+// }
+// }, false);
 
-cookieAccept.addEventListener('click', function() {
 
-  if (cookieBox.classList.contains('hidden')) {
-    cookieBox.classList.remove('hidden');
-    setTimeout(function() {
-      cookieBox.classList.remove('visuallyhidden');
-    }, 20);
-  }
-  else {
-    cookieBox.classList.add('visuallyhidden');
-    cookieBox.addEventListener('transitioned', function(e) {
-      setTimeout(function() {
-        cookieBox.classList.add('hidden');
-      }, 1000);
-    }, {
-    capture: false,
-    once: true,
-    passive: false
-  });
-}
-}, false);
 
-cookieDecline.addEventListener('click', function() {
+// Google Analytics script
+// var scriptOne = document.createElement('script').async;
+// var scriptTwo = document.createElement('script');
+// var head = document.getElementsByTagName('head')[0]
+//
+// scriptOne.type = 'text/javascript';
+// scriptOne.src = 'https://www.googletagmanager.com/gtag/js?id=G-LMLBK5YKV0"';
+//
+// scriptTwo.innerHTML = 'window.dataLayer = window.dataLayer || []; \
+//                        function gtag(){dataLayer.push(arguments);} \
+//                        gtag(\'js\', new Date()); \
+//                        gtag(\'config\', \'G-LMLBK5YKV0\')'
+//
+// cookieValue = document.cookie.match(/(;)?cookiebar=([^;]*);?/)[2];
+// console.log(cookieValue);
+// if (cookieValue == 'CookieAllowed') {
+//   console.log('cookies appended');
+//   head.appendChild(scriptOne);
+//   head.appendChil(scriptTwo);
+// }
 
-  if (cookieBox.classList.contains('hidden')) {
-    cookieBox.classList.remove('hidden');
-    setTimeout(function() {
-      cookieBox.classList.remove('visuallyhidden');
-    }, 20);
-  }
-  else {
-    cookieBox.classList.add('visuallyhidden');
-    cookieBox.addEventListener('transitioned', function(e) {
-      setTimeout(function() {
-        cookieBox.classList.add('hidden');
-      }, 1000);
-    }, {
-    capture: false,
-    once: true,
-    passive: false
-  });
-}
-}, false);
+// Global site tag (gtag.js) - Google Analytics
+// <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMLBK5YKV0"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+//
+//   gtag('config', 'G-LMLBK5YKV0');
+// </script>
+// -------------------------------
 
 // (function () {
 //   "use strict";
 //
-//   var cookieName = 'tplCookieConsent'; // The cookie name
-//   var cookieLifetime = 365; // Cookie expiry in days
+//   var gtagTrackInfo = 'gtagExpTime'; // The cookie name
+//   var cookieLifetime = 60; // Cookie expiry in days
 //
-//   /**
-//    * Set a cookie
-//    * @param cname - cookie name
-//    * @param cvalue - cookie value
-//    * @param exdays - expiry in days
-//    */
-//   var _setCookie = function (cname, cvalue, exdays) {
-//     var d = new Date();
-//     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-//     var expires = "expires=" + d.toUTCString();
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//   };
+//    /**
+//     * Set a cookie
+//     * @param cname - cookie name
+//     * @param cvalue - cookie value
+//     * @param exdays - expiry in days
+//     */
+//    var _setCookie = function (cname, cvalue, exdays) {
+//      var d = new Date();
+//      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+//      var expires = "expires=" + d.toUTCString();
+//      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+//    };
 //
-//   /**
-//    * Get a cookie
-//    * @param cname - cookie name
-//    * @returns string
-//    */
-//   var _getCookie = function (cname) {
-//     var name = cname + "=";
-//     var ca = document.cookie.split(';');
-//     for (var i = 0; i < ca.length; i++) {
-//       var c = ca[i];
-//       while (c.charAt(0) == ' ') {
-//         c = c.substring(1);
-//       }
-//       if (c.indexOf(name) == 0) {
-//         return c.substring(name.length, c.length);
-//       }
-//     }
-//     return "";
-//   };
+//    // set Google Analytics script
+//    var scriptOne = document.createElement('script').async;
+//    scriptOne.type = 'text/javascript';
+//    scriptOne.src = 'https://www.googletagmanager.com/gtag/js?id=G-LMLBK5YKV0"';
 //
-//   /**
-//    * Should the cookie popup be shown?
-//    */
-//   var _shouldShowPopup = function () {
-//     if (_getCookie(cookieName)) {
-//       return false;
-//     } else {
-//       return true;
-//     }
-//   };
+//    var head = document.getElementsByTagName('head')[0]
+//    head.appendChild(script);
 //
-//   // Show the cookie popup on load if not previously accepted
-//   if (_shouldShowPopup()) {
-//     $('#cookieModal').modal('show');
-//   }
+//    /**
+//     * Get a cookie
+//     * @param cname - cookie name
+//     * @returns string
+//     */
+//    var _getCookie = function (cname) {
+//      var name = cname + "=";
+//      var ca = document.cookie.split(';');
+//      for (var i = 0; i < ca.length; i++) {
+//        var c = ca[i];
+//        while (c.charAt(0) == ' ') {
+//          c = c.substring(1);
+//        }
+//        if (c.indexOf(name) == 0) {
+//          return c.substring(name.length, c.length);
+//        }
+//      }
+//      return "";
+//    };
 //
-//   // Modal dismiss btn - consent
-//   $('#cookieModalConsent').on('click', function () {
-//     _setCookie(cookieName, 1, cookieLifetime);
-//   });
+//    /**
+//     * Should the cookie popup be shown?
+//     */
+//    var _shouldShowPopup = function () {
+//      if (_getCookie(cookieName)) {
+//        return false;
+//      } else {
+//        return true;
+//      }
+//    };
+//
+//    // Show the cookie popup on load if not previously accepted
+//    if (_shouldShowPopup()) {
+//      // $('#cookieModal').modal('show');
+//      $('cookie-bar').modal('show');
+//    }
+//
+//    // Modal dismiss btn - consent
+//    $('#cookieModalConsent').on('click', function () {
+//      _setCookie(cookieName, 1, cookieLifetime);
+//    });
 //
 // })();
 
