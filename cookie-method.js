@@ -27,19 +27,15 @@ var $tracking_cookie_path = false;   // eg. "/"
 
 // Insites Cookie Consent with Opt-IN for MATOMO tracking Cookie
 // Source: https://cookieconsent.insites.com/documentation/disabling-cookies/
-console.log('script is loaded');
+// console.log('script is loaded');
 // setTimeout(function() {
   window.addEventListener("load", function () {
       window.cookieconsent.initialise({
-          // "palette": {
-          //     "popup": {
-          //         "background": "#000"
-          //     },
-          //     "button": {
-          //         "background": "#72c326",
-          //         "text":"#fff"
-          //     }
-          // },
+          "palette": {
+              "popup": {
+                  "background": "#f8f8f8"
+              },
+          },
           "cookie": {
               "expiryDays": 30
            },
@@ -123,7 +119,7 @@ function embedTrackingCode(){
     gtag('js', new Date());
     gtag('config', $tracking_id, { 'anonymize_ip': true });
 
-    console.log('Google Analytics Tracking enabled')
+    // console.log('Google Analytics Tracking enabled')
 }
 
 
