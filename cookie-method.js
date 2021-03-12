@@ -45,7 +45,7 @@ var $tracking_cookie_path = false;   // eg. "/"
               "allow": "Einverstanden",
               "deny": "Ablehnen",
               "link": "Mehr erfahren",
-              "href": "/privacy.html",
+              "href": "privacy.html",
               "policy": 'Cookie Einstellungen'
           },
           onPopupOpen: function () {

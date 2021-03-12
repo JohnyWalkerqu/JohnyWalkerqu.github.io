@@ -255,8 +255,13 @@ div.font-size-small {
   transition: all 800ms cubic-bezier(.8, 0, .33, 1);
 }
 
+.cc-revoke.cc-bottom {
+  left: auto !important;
+}
+
+
 .cc-revoke {
-  left: 0;
+  right: 10vw;
 }
 
 a.cc-link {
