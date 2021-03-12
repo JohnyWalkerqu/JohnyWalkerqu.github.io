@@ -27,20 +27,21 @@ var $tracking_cookie_path = false;   // eg. "/"
 
 // Insites Cookie Consent with Opt-IN for MATOMO tracking Cookie
 // Source: https://cookieconsent.insites.com/documentation/disabling-cookies/
-setTimeout(function() {
+console.log('script is loaded');
+// setTimeout(function() {
   window.addEventListener("load", function () {
       window.cookieconsent.initialise({
-          "palette": {
-              "popup": {
-                  "background": "#000"
-              },
-              "button": {
-                  "background": "#72c326",
-                  "text":"#fff"
-              }
-          },
+          // "palette": {
+          //     "popup": {
+          //         "background": "#000"
+          //     },
+          //     "button": {
+          //         "background": "#72c326",
+          //         "text":"#fff"
+          //     }
+          // },
           "cookie": {
-              "expiryDays": 1
+              "expiryDays": 30
            },
           "type": "opt-in",
           "content": {
@@ -48,7 +49,7 @@ setTimeout(function() {
               "allow": "Einverstanden",
               "deny": "Ablehnen",
               "link": "Mehr erfahren",
-              "href": "/datenschutz",
+              "href": "/privacy",
               "policy": 'Cookie Einstellungen'
           },
           onPopupOpen: function () {
@@ -102,11 +103,9 @@ setTimeout(function() {
                   embedTrackingCode();
               }
           },
-
       })
-  })
-}, 4000);
-
+  });
+// }, 4000);
 
 
 /* –  – NO FUTHER SETTINGS NEEDED BELOW THIS LINE –  – */
@@ -124,7 +123,7 @@ function embedTrackingCode(){
     gtag('js', new Date());
     gtag('config', $tracking_id, { 'anonymize_ip': true });
 
-    //console.log('Google Analytics Tracking enabled')
+    console.log('Google Analytics Tracking enabled')
 }
 
 
@@ -154,9 +153,6 @@ function deleteGACookies(){
     //console.log('Google Analytics Tracking disabled')
 }
 
-
-
-
 // function for deleting Cookies (such as that ones from Google Analytics)
 function clearCookie(name,domain,path){
     if(!domain || domain==""){
@@ -168,7 +164,6 @@ function clearCookie(name,domain,path){
     document.cookie = name + '=; domain=' + domain +'; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path;
 }
 
-
 // function for triggering a click on the cc-revoke button
 // wich will show the consent banner again.
 // You may use it in a link, such as this example:
@@ -177,7 +172,6 @@ function openCCbanner(){
     var el = document.querySelector('.cc-revoke');
     el.click();
 }
-
 
 // –  – OPTIONAL – -----------------
 // Google Analytics Opt-Out Cookie
@@ -190,7 +184,6 @@ function gaOptout() {
     window[$tracking_disable_cookie] = true;
     alert("Der Opt-Out-Cookie für das Deaktivieren von Google Analytics wurde abgelegt.")
 }
-
 
 /*
     PLACE THIS ON YOUR PRIVACY PAGE:

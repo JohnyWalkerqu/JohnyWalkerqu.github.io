@@ -244,6 +244,51 @@ div.font-size-small {
     START
     COOKIE SETTINGS
 ======================== */
+.cc-window,
+.cc-revoke {
+  background: #f8f8f8;
+  box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
+
+  transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+}
+
+.cc-revoke {
+  left: 0;
+}
+
+a.cc-link {
+  color: var(--fontColorBody);
+}
+
+.cc-btn {
+  color: var(--fontColorBody);
+  border-color: var(--fontColorBody);
+}
+
+.cc-highlight .cc-btn:first-child:focus,
+.cc-highlight .cc-btn:first-child:hover {
+ text-decoration:underline;
+ border-color: var(--colorDecline);
+ color: var(--colorDecline);
+}
+
+.cc-highlight .cc-btn:first-child {
+ background-color:transparent;
+ border-color:var(--fontColorBody);
+}
+
+a.cc-allow:focus,
+a.cc-allow:hover, {
+ background-color: var(--colorAccept);
+}
+
+a.cc-btn:nth-child(2) {
+ border-color: var(--colorAccept);
+ color: var(--colorAccept);
+}
+
+
+
 .cookie-bar {
   display: none;
   background: #f8f8f8;
