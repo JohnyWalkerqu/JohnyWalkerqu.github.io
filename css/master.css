@@ -115,6 +115,9 @@ body {
   color: var(--fontColorBody);
   margin: 0;
   padding: 0;
+ /*! font-size:1rem; */font-weight:400;
+}
+
 
   /* disable right click */
   -webkit-user-select: none;
@@ -2440,22 +2443,6 @@ header.privacy {
   width: 66.7%;
 }
 
-#logo-nav-header-privacy {
-  max-width: 4em;
-  height: auto;
-  cursor: pointer;
-
-  /* disable select to copy the logo
-     -------
-     this is set aditional to the JS
-     because the JS-Code does not work
-     on mobile yet.
-  */
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
 
 .privacy-center {
   padding: 0;
@@ -2465,6 +2452,7 @@ header.privacy {
 .privacy-content {
   padding-top: 0;
   margin-top: 20vh;
+  padding-bottom: 10%;
 }
 
 #privacy-center {
@@ -2477,6 +2465,10 @@ header.privacy {
 }
 
 .double-nested-list {
+  font-size: var(--fontSizeP);
+}
+
+.table {
   font-size: var(--fontSizeP);
 }
 
@@ -2546,6 +2538,7 @@ GENERAL SETTINGS
   to add desktop nav height*/
   .section {
       scroll-margin-top: 15vh;
+      padding-bottom: 10%;
       /* margin-top: -15vh; */
   }
 
