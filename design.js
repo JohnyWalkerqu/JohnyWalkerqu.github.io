@@ -1,3 +1,4 @@
+var body = document.querySelector('body');
 var sectionLanding = document.querySelector('.landing');
 var sectionContact = document.querySelector('.input-form');
 var header = document.querySelector('header');
@@ -470,4 +471,15 @@ $(document).on('click', '#copy', function() {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
+});
+
+// COPY MODE ON
+$(document).on('click', '#copy-mode-on', function() {
+  alert('copy mode activated');
+  body.style.webkitUserSelect = "auto";
+  body.style.mozUserSelect = "auto";
+  body.style.msUserSelect = "auto";
+  body.style.oUserSelect = "auto";
+  body.style.userSelect = "auto";
+
 });
