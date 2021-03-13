@@ -668,16 +668,45 @@
               <!-- TODO: show it in console -->
 
               <div class="form-group">
-                <button
-                  id="submit"
-                  class="submit-button btn-shadow btn"
-                  type="submit"
-                  value="submit">
+                <!-- Button trigger modal
+                     see JS to change the triggerd modal-->
+                <button id="submit" class="submit-button btn-shadow btn"
+                type="submit" value="submit">
                   <i class="fas fa-paper-plane"></i>
-                  Send
+                   Send
                 </button>
               </div>
             </form>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content alert alert-success">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><strong>Message created!</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Currently, the message has to be send over your own mail application.
+                       Please use the "Copy"-Button in case your mail application 
+                       does not open automatically. You can send us an email
+                       manualy to info@cube-manufaktur.com.
+                     </p>
+                    <p>Your Input:</p>
+                    <div id = "insert-contact-info"></div>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="copy" type="button" class="btn btn-light">Copy</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </section>

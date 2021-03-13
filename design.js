@@ -399,35 +399,22 @@ var submit = document.getElementById('submit');
 
 submit.addEventListener('click', () => {
 
-  // Submit form with id function.
-  function say_hello() {
-    alert('Hello');
+  var firstname = document.getElementById("firstname").value;
+  var surname = document.getElementById("surname").value;
+  var adress = document.getElementById("adress").value;
+  var email = document.getElementById("email").value;
+  var option = document.getElementById("marketing").value;
+  var comment = document.getElementById("comment").value;
+
+  if (validation()) {// Calling validation function
+    form.submit(); //form submission
+
+    alert(" firstname : " + firstname +
+          " n surname : " + surname +
+          " n zip-code : " + adress +
+          " n Email : " + email +
+          " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
   }
-
-  // submit_by_id() {
-
-    console.log('submit by id');
-    // console.log('trigger modal');
-    // $('#modal').modal('toggle');
-
-    var firstname = document.getElementById("firstname").value;
-    var surname = document.getElementById("surname").value;
-    var adress = document.getElementById("adress").value;
-    var email = document.getElementById("email").value;
-    var option = document.getElementById("marketing").value;
-    var comment = document.getElementById("comment").value;
-
-    if (validation()) {// Calling validation function
-      form.submit(); //form submission
-      console.log('trigger modal');
-      $('#modal').modal('toggle');
-
-      alert(" firstname : " + firstname +
-            " n surname : " + surname +
-            " n zip-code : " + adress +
-            " n Email : " + email +
-            " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
-    }
 
   // Name and Email validation
   function validation() {
@@ -465,4 +452,18 @@ submit.addEventListener('click', () => {
         // </div>
     }
   }
+});
+
+// COPY Button
+$(document).on('click', '#copy', function() {
+  
+  alert('Eingegebene Inhalte wurden kopiert.')
+  var range = document.createRange();
+
+  range.selectNode(document.getElementById("insert-contact-info"));
+
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();// to deselect
 });
