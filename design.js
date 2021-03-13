@@ -398,27 +398,43 @@ var form = document.getElementById('contact-form');
 var submit = document.getElementById('submit');
 
 submit.addEventListener('click', () => {
+
   // Submit form with id function.
-  function submit_by_id() {
+  function say_hello() {
+    alert('Hello');
+  }
+
+  // submit_by_id() {
+
+    console.log('submit by id');
+    // console.log('trigger modal');
+    // $('#modal').modal('toggle');
+
     var firstname = document.getElementById("firstname").value;
     var surname = document.getElementById("surname").value;
     var adress = document.getElementById("adress").value;
     var email = document.getElementById("email").value;
+    var option = document.getElementById("marketing").value;
+    var comment = document.getElementById("comment").value;
+
     if (validation()) {// Calling validation function
       form.submit(); //form submission
+      console.log('trigger modal');
+      $('#modal').modal('toggle');
+
       alert(" firstname : " + firstname +
             " n surname : " + surname +
             " n zip-code : " + adress +
             " n Email : " + email +
             " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
     }
-  }
 
   // Name and Email validation
   function validation() {
+    console.log('validation reached');
     var firstname = document.getElementById('firstname').value;
     var surname = document.getElementById('surname').value;
-    var email = document.getElementById('adress').value;
+    var adress = document.getElementById('adress').value;
     var email = document.getElementById('email').value;
     // var marketing = document.getElementById('marketing').value;
     var emailReg = mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -432,7 +448,18 @@ submit.addEventListener('click', () => {
       return false;
     }
     else {
+      // console.log('trigger modal');
+      var contactInfo = document.getElementById('insert-contact-info');
+      contactInfo.innerHTML = "<p>Vorname: " + firstname + "</p> \
+                              <p>Nachname: " + surname + "</p> \
+                              <p>Postleitzahl: " + adress + "</p> \
+                              <p>Email: " + email + "</p> \
+                              <p>Auswahl: " + marketing + "</p> \
+                              <p>Kommentar: " + comment + "</p>";
+
+      $('#modal').modal('toggle');
       return true;
+
         // <div class="alert alert-success" role="alert">
         // This is a success alert—check it out!
         // </div>

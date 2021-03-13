@@ -634,7 +634,7 @@
                         required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
-                  <label>Vorname</label>
+                  <label>Vorname (Pflichtfeld)</label>
               </div>
 
               <!-- Input Nachname -->
@@ -643,7 +643,7 @@
                 <input id="surname" class="input" type="text" name="surname" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>Nachname</label>
+                <label>Nachname (Pflichtfeld)</label>
               </div>
 
               <!-- Input Adress -->
@@ -653,7 +653,7 @@
                 <input id="adress" class="input" type="tel" name="adress" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>Postleitzahl</label>
+                <label>Postleitzahl (Pflichtfeld)</label>
               </div>
 
               <!-- Input Email -->
@@ -662,7 +662,7 @@
                 <input id="email" class="input" type="email" name="email" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>Email</label>
+                <label>Email (Pflichtfeld)</label>
               </div>
 
             <div class="group validate-input optiondrop">
@@ -693,6 +693,8 @@
             <!-- TODO: show it in console -->
 
             <div class="form-group">
+              <!-- Button trigger modal
+                   see JS to change the triggerd modal-->
               <button id="submit" class="submit-button btn-shadow btn"
               type="submit" value="submit">
                 <i class="fas fa-paper-plane"></i>
@@ -700,6 +702,29 @@
               </button>
             </div>
           </form>
+          <!-- Modal -->
+          <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content alert alert-success">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><strong>Nachricht erzeugt!</strong></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Die Nachricht wird über Ihre Mail-Anwendung versendet.</p>
+                  <p>Hier sind Ihre eingegebenen Informationen:</p>
+                  <div id = "insert-contact-info"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Kopieren</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <!-- <div class="modal">
             <div class="modal-dialog">

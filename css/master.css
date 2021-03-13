@@ -2217,6 +2217,11 @@ button:active:before {
   height: 42px;
 }
 
+.alert-success {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+}
+
 /*------------------------------------------------------------------
 [ Alert validate ]*/
 
