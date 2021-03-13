@@ -41,11 +41,12 @@ var $tracking_cookie_path = false;   // eg. "/"
            },
           "type": "opt-in",
           "content": {
+              "header": "Cookie-Hinweis",
               "message": "Wir verwenden Tracking-Cookies, um unsere Website stetig zu verbessern sowie für anonymisierte Nutzungsstatistiken.",
               "allow": "Einverstanden",
               "deny": "Ablehnen",
               "link": "Mehr erfahren",
-              "href": "privacy.html",
+              "href": "/privacy.html",
               "policy": 'Cookie Einstellungen'
           },
           onPopupOpen: function () {
