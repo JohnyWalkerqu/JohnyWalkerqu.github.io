@@ -316,6 +316,7 @@ var cardHeaderZipperBlock = document.querySelector('.card__header-zipper');
 var cardCamIcon = document.querySelector('.bi-camera');
 var cardZipper = document.querySelector('.zipper-block');
 var cardZipperClose = document.querySelector('.card__header-close');
+var accordionElements = document.getElementById('accordionExample');
 // var cardTurned = document.querySelector('.card-turned');
 
 cardCamIcon.addEventListener('click', () => {
@@ -324,7 +325,8 @@ cardCamIcon.addEventListener('click', () => {
   cardPrototype.classList.add('justy-align');
   cardBody.classList.add('overlay');
   cardCamIcon.style.display = "none";
-  cardBody.style.visibility = "hidden";
+  accordionElements.style.display = "none";
+  // cardBody.style.visibility = "hidden";
 
   // creates div element button
   var newDiv = document.createElement('div');
@@ -377,6 +379,8 @@ cardCamIcon.addEventListener('click', () => {
     cardCamIcon.style.display = "flex";
     cardPrototype.style.height = "auto";
     cardPrototype.classList.remove('justy-align');
+    accordionElements.style.display = "block";
+
     // cardPrototype.style.backgroundColor = "var(--backgroundColorSecInput)";
   })
 }
@@ -456,7 +460,7 @@ submit.addEventListener('click', () => {
 
 // COPY Button
 $(document).on('click', '#copy', function() {
-  
+
   alert('Eingegebene Inhalte wurden kopiert.')
   var range = document.createRange();
 
