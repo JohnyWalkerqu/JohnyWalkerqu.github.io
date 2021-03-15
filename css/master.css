@@ -530,8 +530,6 @@ section.landing {
 }
 
 
-
-
 /*
 ========================
     FIRST PAGE
@@ -1295,6 +1293,121 @@ add class on scroll */
 /*
 ========================
     SECOND PAGE
+    - WELCOME
+========================
+*/
+
+/*
+========================
+    START
+    WELCOME TEXT
+========================
+*/
+
+/* section */
+#welcome {
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+}
+
+/* hide plain welcome text */
+.welcome-text-layout-desktop {
+  display: none;
+}
+
+.welcome-welcome {
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+  height: inherit;
+}
+
+.hide {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.welcome {
+  background: #fff;
+  width: 400px;
+  border: 1px solid #e0e0e0;
+}
+
+.welcome-item {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.welcome-item:last-child {
+  border-bottom: none;
+}
+
+.welcome-label {
+  padding: 20px 0 20px 30px;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+}
+
+.welcome-label:hover {
+  cursor: pointer;
+}
+
+.welcome-label:before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  top: 22px;
+  left: 12px;
+  display: inline-block;
+  border-left: 5px solid #999;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+input[type=checkbox]:checked ~ .welcome-label:before {
+  transform: rotate(90deg);
+}
+
+.welcome-child {
+  margin: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  height: 0;
+  transform: scale(1, 0);
+  transform-origin: center top;
+}
+
+input[type=checkbox]:checked ~ .welcome-child {
+  border: 1px solid #e0e0e0;
+  margin: 0 -20px 15px -20px;
+  background: #fff;
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
+  padding: 30px;
+  height: auto;
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+/*
+========================
+    END
+    WELCOME TEXT
+========================
+*/
+
+
+/*
+========================
+    THIRD PAGE
     - THE PROJECT
 ======================== */
 .card__container-content {
@@ -1879,7 +1992,7 @@ Animation
 
 /*
 ========================
-    SECOND PAGE
+    FOURTH PAGE
     - CONTACT PAGE
 ======================== */
 
@@ -1966,7 +2079,7 @@ section {
   margin-bottom:35px;
 }
 
-input {
+.input {
   font-size: var(--fontSizeForm);
   padding:10px 10px 10px 5px;
   display:block;
@@ -1977,12 +2090,12 @@ input {
   cursor: text;
 }
 
-input:focus {
+.input:focus {
   outline:none;
 }
 
 /* LABEL ======================================= */
-label 				 {
+.label {
   font-size:var(--fontSizeForm);
   font-weight:normal;
   position:absolute;
@@ -1996,7 +2109,7 @@ label 				 {
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
+.input:focus ~ .label, .input:valid ~ .label 		{
   top:-20px;
   font-size: var(--fontSizeLabel);
   color: var(--highlightInput);
@@ -2030,7 +2143,7 @@ input:focus ~ label, input:valid ~ label 		{
   }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
   /* left: 50%; */
   width:100%;
 }
@@ -2527,6 +2640,11 @@ GENERAL SETTINGS
   .grid-image {
     grid-area: 2 / 3 / 10 / 11;
   }
+
+  /* PADDING TO NEXT SECTION */
+  #welcome {
+    margin-bottom: 0;
+  }
 }
 
 /* iPad Size */
@@ -2606,6 +2724,18 @@ GENERAL SETTINGS
   .grid-text {
     grid-area: 10 / 3 / 10 / 11;
   }
+
+  /* WELCOME TEXT */
+
+    /* hide welcome accordion */
+    .welcome-welcome {
+      display: none;
+    }
+
+    /* show plain welcome text */
+    .welcome-text-layout-desktop {
+      display: block;
+    }
 
   .card__container-content {
     grid-template-columns: repeat(2, minmax(300px, 500px));
