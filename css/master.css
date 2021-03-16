@@ -254,14 +254,14 @@ div.font-size-small {
   transition: all 800ms cubic-bezier(.8, 0, .33, 1);
 }
 
-
 .cc-revoke.cc-bottom {
   left: auto !important;
 }
 
-
 .cc-revoke {
   right: 10vw;
+  /* removes revoke from screen */
+  display: none;
 }
 
 a.cc-link {
@@ -2262,15 +2262,16 @@ textarea {
   border-radius: var(--borderRadius);
   font-size: var(--fontSizeP);
   color: var(--fontColorForm);
-  resize: vertical;
 }
 
   #comment {
     border: 2px solid;
     /* takes the color of the parent */
     border-color: inherit;
+    border-radius: var(--borderRadius);
     font-family: 'cube-font';
     background-color: transparent;
+    resize: vertical;
     min-height: 200px;
   }
 
@@ -2295,8 +2296,14 @@ form input{
 }
 form input::selection{
   color: #fff;
-  background: #58cff1;
+  background: var(--highlightInput);
 }
+
+form textarea::selection{
+  color: #fff;
+  background: var(--highlightInput);
+}
+
 form input::placeholder{
   color: var(--fontColorForm);
 }
@@ -2330,9 +2337,10 @@ form input:valid ~ .counter{
   color: var(--highlightInput);
   border-color: var(--fontColorForm);
 }
-form textarea:valid ~ .counter{
-  color: var(--highlightInput);
-  border-color: var(--fontColorForm);
+
+.textarea-counter {
+  color: var(--highlightInput) !important;
+  border-color: var(--fontColorForm) !important;
 }
 
 
@@ -2819,13 +2827,10 @@ GENERAL SETTINGS
     max-width: none;
   }
 
-  textarea {
-    resize: both;
-  }
-
   #comment {
     height: 100%;
     min-height: 400px;
+    resize: both;
   }
 
   /* align send button higher */
