@@ -12,6 +12,9 @@
     <!-- ===================== LOAD Font Awesome Icons =================== -->
     <script src="https://kit.fontawesome.com/38572f36b6.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
+
+
     <!-- COOKIE CONSENT -->
     <!-- ===================== LOAD Cookie Consent CSS =================== -->
     <!-- <link rel="stylesheet" href="/analytics/cookieconsent.min.css"/> -->
@@ -551,7 +554,8 @@
                                     Der Innenraum ist geprägt durch große Fensterelemente,
                                     wie auch die beidseitig klappbare Eingangstüre. Ein
                                     besonderes Highlight stellt das im ungenutzten Zustand
-                                    auf nur 450mm Kabinentiefe geschlossene Badelement dar.
+                                    auf nur 450mm der Gesamtbreites des Aufbaus
+                                    schließbare Badelement dar.
                                     Dieses lässt sich bei Benutzung um das doppelte vergrößeren,
                                     wodurch ein Größenverhältnis entsteht, welches nur in
                                     deutlich größeren Campingbauten zu finden ist.
@@ -694,18 +698,21 @@
               <div class="group validate-input firstname"
                       data-validate = "Firstname is required">
                 <input id="firstname" class="input" type="text" name="firstname"
-                        required>
+                       spellcheck="false" maxlength="30" required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
+                  <span class = "counter" id="counterFirstname">30</span>
                   <label class="label">Vorname (Pflichtfeld)</label>
               </div>
 
               <!-- Input Nachname -->
               <div class="group validate-input surname"
                   data-validate = "Surname is required">
-                <input id="surname" class="input" type="text" name="surname" required>
+                <input id="surname" class="input" type="text" name="surname"
+                       spellcheck="false" maxlength="30" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
+                <span class = "counter" id="counterSurname">30</span>
                 <label class="label">Nachname (Pflichtfeld)</label>
               </div>
 
@@ -713,18 +720,22 @@
               <div class="group validate-input zip"
                    data-validate = "Zip-Code is required">
                 <!-- TODO: only works correctly on required -->
-                <input id="adress" class="input" type="tel" name="adress" required>
+                <input id="adress" class="input" type="tel" name="adress"
+                       spellcheck="false" maxlength="5" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
+                <span class = "counter" id="counterAdress">5</span>
                 <label class="label">Postleitzahl (Pflichtfeld)</label>
               </div>
 
               <!-- Input Email -->
               <div class="group validate-input email"
                    data-validate = "Valid email is required: ex@abc.xyz">
-                <input id="email" class="input" type="email" name="email" required>
+                <input id="email" class="input" type="mail" name="email"
+                       spellcheck="false" maxlength="32" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
+                <span class = "counter" id="counterEmail">32</span>
                 <label class="label">Email (Pflichtfeld)</label>
               </div>
 
@@ -749,8 +760,10 @@
 
             <div class="group validate-input commentary">
               <p>Kommentare oder Anmerkungen?</p>
-              <textarea name="comment" id="comment"
-                placeholder="Geben Sie hier Ihre Kommentare ein ..."></textarea>
+              <textarea name="comment" id="comment" spellcheck="false"
+                maxlength="999" placeholder="Geben Sie hier Ihre Kommentare ein ...">
+              </textarea>
+              <span class="counter" id="counterComment">999</span>
             </div>
             <!-- TODO: pop-up info, if send worked correctly -->
             <!-- TODO: show it in console -->

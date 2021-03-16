@@ -67,7 +67,6 @@
   --basicF: 1em;
   --baseFontSize:       calc(var(--basicF) * 1.75);
   --fontSizeNavDesktop: calc(var(--basicF) * 0.5);
-  --fontSizeForm :      calc(var(--basicF) * 0.8);
   /* size of the paragraphs */
   --fontSizeP:          calc(var(--basicF) * 0.6);
   /* size of paragraphs smaller */
@@ -2067,9 +2066,7 @@ section {
 #contact-form {
   display: grid;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 90%;
+  width: 100%;
   color: var(--fontColorForm);
 }
 
@@ -2080,7 +2077,7 @@ section {
 }
 
 .input {
-  font-size: var(--fontSizeForm);
+  font-size: var(--fontSizeP);
   padding:10px 10px 10px 5px;
   display:block;
   width: 100%;
@@ -2096,7 +2093,7 @@ section {
 
 /* LABEL ======================================= */
 .label {
-  font-size:var(--fontSizeForm);
+  font-size:var(--fontSizeP);
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -2200,7 +2197,7 @@ select {
   cursor: inherit;
   line-height: inherit;
   font-family: var(--baseFontFamily);
-  font-size: var(--fontSizeForm);
+  font-size: var(--fontSizeP);
 
   color: var(--fontColorForm);
   background-color: transparent;
@@ -2257,9 +2254,9 @@ textarea {
   padding: 5%;
   width: 100%;
   border-radius: var(--borderRadius);
-  font-size: var(--fontSizeForm);
+  font-size: var(--fontSizeP);
   color: var(--fontColorForm);
-  overflow: auto;
+  resize: vertical;
 }
 
   #comment {
@@ -2276,6 +2273,61 @@ textarea {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     color: var(--fontColorBody);
   }
+
+/* COUNT CHARACTERS
+===============================*/
+form input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 50px 0 45px;
+  font-size: 20px;
+  caret-color: var(--highlightInput);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.1s ease;
+}
+form input::selection{
+  color: #fff;
+  background: #58cff1;
+}
+form input::placeholder{
+  color: var(--fontColorForm);
+}
+form .counter{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  padding-left: 2px;
+  height:85%;
+  width:18px;
+  top:5%;
+  right:1px;
+
+  color: var(--fontColorForm);
+  text-align: center;
+  border-left: 1px solid #d8d8d8;
+  pointer-events: none;
+  font-size: var(--fontSizeP);
+  z-index: 2000;
+}
+
+form #counterComment {
+  right: auto;
+  height: auto;
+  width: auto;
+  top: auto;
+  margin-left: 90%;
+}
+
+form input:valid ~ .counter{
+  color: var(--highlightInput);
+  border-color: var(--fontColorForm);
+}
+textarea:valid ~ #counterComment{
+  color: var(--highlightInput);
+  border-color: var(--fontColorForm);
+}
 
 
 /* BUTTON */
@@ -2645,6 +2697,11 @@ GENERAL SETTINGS
   #welcome {
     margin-bottom: 0;
   }
+
+  /* fit it under textarea */
+  #counterComment {
+    margin-left: 92% !important;
+  }
 }
 
 /* iPad Size */
@@ -2753,6 +2810,10 @@ GENERAL SETTINGS
     grid-gap: 2em;
     align-items: self-end;
     width: 70%;
+  }
+
+  textarea {
+    resize: both;
   }
 
   #comment {

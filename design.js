@@ -459,6 +459,45 @@ submit.addEventListener('click', () => {
   }
 });
 
+// COUNT UP Characters in input-fields
+const inputFirstname = document.getElementById("firstname");
+const inputSurname = document.getElementById("surname");
+const inputAdress = document.getElementById("adress");
+const inputEmail = document.getElementById("email");
+const inputComment = document.getElementById("comment");
+
+counterFirstname = document.getElementById("counterFirstname");
+counterSurname = document.getElementById("counterSurname");
+counterAdress = document.getElementById("counterAdress");
+counterEmail = document.getElementById("counterEmail");
+counterComment = document.getElementById("counterComment");
+
+maxLengthFirstname = inputFirstname.getAttribute("maxlength");
+maxLengthSurname = inputSurname.getAttribute("maxlength");
+maxLengthAdress = inputAdress.getAttribute("maxlength");
+maxLengthEmail = inputEmail.getAttribute("maxlength");
+maxLengthComment = inputComment.getAttribute("maxlength");
+
+inputFirstname.onkeyup = ()=>{
+  counterFirstname.innerText = maxLengthFirstname - inputFirstname.value.length;
+}
+
+inputSurname.onkeyup = ()=>{
+  counterSurname.innerText = maxLengthSurname - inputSurname.value.length;
+}
+
+inputAdress.onkeyup = ()=>{
+  counterAdress.innerText = maxLengthAdress - inputAdress.value.length;
+}
+
+inputEmail.onkeyup = ()=>{
+  counterEmail.innerText = maxLengthEmail - inputEmail.value.length;
+}
+
+inputComment.onkeyup = ()=>{
+  counterComment.innerText = maxLengthComment - inputComment.value.length;
+}
+
 // COPY Button
 $(document).on('click', '#copy', function() {
 
