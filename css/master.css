@@ -2000,6 +2000,11 @@ Animation
   flex-direction: column;
 }
 
+.form-own {
+  max-width: auto;
+  width: 100%;
+}
+
 .heading {
   text-align: left;
   align-self: center;
@@ -2067,6 +2072,7 @@ section {
   display: grid;
   margin-top: 20px;
   width: 100%;
+  max-width: 500px;
   color: var(--fontColorForm);
 }
 
@@ -2324,7 +2330,7 @@ form input:valid ~ .counter{
   color: var(--highlightInput);
   border-color: var(--fontColorForm);
 }
-textarea:valid ~ #counterComment{
+form textarea:valid ~ .counter{
   color: var(--highlightInput);
   border-color: var(--fontColorForm);
 }
@@ -2810,6 +2816,7 @@ GENERAL SETTINGS
     grid-gap: 2em;
     align-items: self-end;
     width: 70%;
+    max-width: none;
   }
 
   textarea {
