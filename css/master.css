@@ -151,13 +151,8 @@ body, html {
   border: 3px solid lightGrey;  /* creates padding around scroll thumb */
 }
 
-h1 {
-  font-size:1.75em;
-  color:  var(--lightBg);
-  margin: 0;
-  padding: 0.15em;
-  position: relative;
-  top: 0.5em;
+.basic-color {
+  color: var(--fontColorBody);
 }
 
 a {
@@ -187,6 +182,15 @@ a {
   .white { filter: var(--fontColorClearSVG); }
 
   .lightGreen { filter: invert(94%) sepia(7%) saturate(147%) hue-rotate(90deg) brightness(96%) contrast(89%); }
+
+h1 {
+  font-size:1.75em;
+  color:  var(--lightBg);
+  margin: 0;
+  padding: 0.15em;
+  position: relative;
+  top: 0.5em;
+}
 
 h2 {
   margin-bottom: 1rem;
@@ -2216,13 +2220,11 @@ select::-ms-expand {
   display: none;
 }
 
-/* aligns the arrow to the right side */
-.select:after {
-  justify-self: end;
-}
 
 /* defines the arrow */
 .select::after {
+  /* aligns the arrow to the right side */
+  justify-self: end;
   content: "";
   width: 0.8em;
   height: 0.5em;

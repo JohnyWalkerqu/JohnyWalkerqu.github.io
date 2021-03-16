@@ -232,6 +232,8 @@ $( ".btn-card-footer" ).click(function() {
   $( this ).toggleClass( "bi-chevron-down-collapse btn-shadow" );
 })
 
+// SECURITY - Contact Form
+
 
 // CONTACT FORM
 var form = document.getElementById('contact-form');
@@ -337,9 +339,11 @@ inputComment.onkeyup = ()=>{
 $(document).on('input', '#comment', function() {
   if ((inputComment.value.length) > 0) {
     counterComment.classList.add('textarea-counter');
+    inputComment.classList.add('basic-color');
   }
   else {
     counterComment.classList.remove('textarea-counter');
+    inputComment.classList.remove('basic-color');
   }
 })
 
