@@ -36,7 +36,8 @@
     <meta name="DC.Publisher" content="Schreinerei Walk GmbH">
     <meta name="DC.Rights" content="Schreinerei Walk GmbH">
     <meta name="DC.Description" content="CUBE is a brand of Schreinerei Walk GmbH. High-quality add-on cabins for pickups are offered, which can be configured or built individually according to customer requirements. A modern, minimalist design and sustainability are in the foreground.">
-    <meta name="DC.Language" content="en">  </head>
+    <meta name="DC.Language" content="en">
+  </head>
   <body>
     <!--
      ========================
@@ -721,20 +722,25 @@
                 </div>
 
               <div class="group validate-input optiondrop">
-                <p>How did you find out about
-                  <span class="cube-logo-font">cub<span class="no-space">e</span></span>?</p>
-                <div class="select">
-                  <select class="form-control" name="marketing" id="marketing">
-                    <option disabled="" selected="" value="">
-                      Choose an option</option>
-                    <option value="schreinereiWalk">business contact (Schreinerei Walk)</option>
-                    <option value="campManWue">business contact (camper manufaktur wue)</option>
-                    <option value="instagramm">Instagramm</option>
-                    <option value="facebook">Facebook</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <span class="focus"></span>
-                </div>
+                <p>How did you hear about
+                  <span class="font-cube">
+                    cub<span class="no-space">e</span></span>?
+                </p>
+
+                <ul class="validate-input welcome-welcome justy-flex">
+                  <li class="dropdown">
+                    <input id="o1" class="hide" type="checkbox">
+                    <label id="label" name="option" for="o1" class="welcome-label option-unselected">Please Select</label>
+                    <ul class="list-group dropdown-list welcome-child">
+                      <li class="list-group-item" value="schreinereiWalk">Schreinerei Walk</li>
+                      <li class="list-group-item" value="campManWue">Campermanufaktur wue</li>
+                      <li class="list-group-item" value="instagramm">Instagramm</li>
+                      <li class="list-group-item" value="facebook">Facebook</li>
+                      <li class="list-group-item" value="other">Other</li>
+                      <li class="list-group-item" value="">Reset</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
 
               <div class="group validate-input commentary">

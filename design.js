@@ -234,37 +234,116 @@ $( ".btn-card-footer" ).click(function() {
 
 // SECURITY - Contact Form
 
-
 // CONTACT FORM
 var form = document.getElementById('contact-form');
 var submit = document.getElementById('submit');
 
-submit.addEventListener('click', () => {
+// DROPDOWN
+// var checkbox = document.querySelector("input[type=checkbox]");
+var checkbox = document.getElementById('o1');
 
+checkbox.addEventListener('change', function() {
+  if (this.checked) {
+    console.log("Checkbox is checked..");
+    $(function() {
+      var label = $('#label');
+      var list = $('.dropdown-list');
+      list.find('li').click(function() {
+        var text = $(this).html();
+        label[0].innerText = text;
+
+        // remove checked states to hide options
+        setTimeout(function(){
+          checkbox.checked = false;
+
+          if (label[0].innerText != 'Reset') {
+            label.addClass('option-selected');
+          }
+
+          else {
+            label.removeClass('option-selected');
+          }
+        }, 200);
+      })
+    });
+  }
+});
+
+
+
+// submit.addEventListener('click', () => {
+//
+//   var firstname = document.getElementById("firstname").value;
+//   var surname = document.getElementById("surname").value;
+//   var adress = document.getElementById("adress").value;
+//   var email = document.getElementById("email").value;
+//   var option = document.getElementById("label").innerText;
+//   var comment = document.getElementById("comment").value;
+//
+//   if (validation()) {
+//     // Calling validation function
+//     // form.submit(); //form submission
+//
+//     // alert(" firstname : " + firstname +
+//     //       " n surname : " + surname +
+//     //       " n zip-code : " + adress +
+//     //       " n Email : " + email +
+//     //       " n Option : " + option +
+//     //       " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
+//   }
+//
+//   // Name and Email validation
+//   function validation() {
+//     // var marketing = document.getElementById('marketing').value;
+//     var emailReg = mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+//
+//     if (firstname === ''  || surname === '' || email === '') {
+//       alert('Please fill all fields!');
+//       return false;
+//     }
+//     else if (!(email).match(emailReg)) {
+//       alert('Invalid Email!');
+//       return false;
+//     }
+//     else {
+//       // console.log('trigger modal');
+//       var contactInfo = document.getElementById('insert-contact-info');
+//       contactInfo.innerHTML = "<p>Vorname: " + firstname + "</p> \
+//                               <p>Nachname: " + surname + "</p> \
+//                               <p>Postleitzahl: " + adress + "</p> \
+//                               <p>Email: " + email + "</p> \
+//                               <p>Auswahl: " + option + "</p> \
+//                               <p>Kommentar: " + comment + "</p>";
+//
+//       $('#modal').modal('toggle');
+//       return true;
+//     }
+//   }
+// });
+function send() {
+  console.log('submit was clicked');
   var firstname = document.getElementById("firstname").value;
   var surname = document.getElementById("surname").value;
   var adress = document.getElementById("adress").value;
   var email = document.getElementById("email").value;
-  var option = document.getElementById("marketing").value;
+  var option = document.getElementById("label").innerText;
   var comment = document.getElementById("comment").value;
 
-  if (validation()) {// Calling validation function
-    form.submit(); //form submission
+  validation();
+  // if (validation()) {
+    // Calling validation function
+    // form.submit(); //form submission
 
-    alert(" firstname : " + firstname +
-          " n surname : " + surname +
-          " n zip-code : " + adress +
-          " n Email : " + email +
-          " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
-  }
+    // alert(" firstname : " + firstname +
+    //       " n surname : " + surname +
+    //       " n zip-code : " + adress +
+    //       " n Email : " + email +
+    //       " n Option : " + option +
+    //       " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
+  // }
 
   // Name and Email validation
   function validation() {
-    console.log('validation reached');
-    var firstname = document.getElementById('firstname').value;
-    var surname = document.getElementById('surname').value;
-    var adress = document.getElementById('adress').value;
-    var email = document.getElementById('email').value;
     // var marketing = document.getElementById('marketing').value;
     var emailReg = mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -283,18 +362,14 @@ submit.addEventListener('click', () => {
                               <p>Nachname: " + surname + "</p> \
                               <p>Postleitzahl: " + adress + "</p> \
                               <p>Email: " + email + "</p> \
-                              <p>Auswahl: " + marketing + "</p> \
+                              <p>Auswahl: " + option + "</p> \
                               <p>Kommentar: " + comment + "</p>";
 
       $('#modal').modal('toggle');
       return true;
-
-        // <div class="alert alert-success" role="alert">
-        // This is a success alert—check it out!
-        // </div>
     }
   }
-});
+};
 
 // COUNT UP Characters in input-fields
 const inputFirstname = document.getElementById("firstname");

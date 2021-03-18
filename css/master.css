@@ -163,6 +163,14 @@ a {
   color: white;
 }
 
+li {
+  -webkit-transition: 400ms;
+  -moz-transition: 400ms;
+  -ms-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
+}
+
 .logo {
   height: auto;
   position: relative;
@@ -2168,6 +2176,38 @@ section {
 
 /* DROPDOWN
    ================================== */
+.option-unselected {
+  border: 1px solid var(--select-border);
+  border-radius: var(--borderRadius);
+}
+
+.option-selected {
+  border: 2px solid var(--highlightInput);
+  color: var(--highlightInput);
+}
+
+.dropdown-list {
+  list-style: none;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.dropdown-list li {
+  width: 100%;
+  cursor: pointer;
+  /* adds a transparent border, through This
+     the hover effect does NOT MOVE the element
+     when the underline effect is shown */
+  border: 3px solid transparent;
+}
+.dropdown-list li:hover {
+  border: 3px solid var(--highlightInput);
+  color: var(--highlightInput);
+}
+
+
+
 :root {
  --select-border: #777;
  --select-focus: blue;
@@ -2189,7 +2229,6 @@ section {
   grid-template-areas: "select";
 
   align-items: center;
-
   position: relative;
 }
 
@@ -2254,6 +2293,8 @@ select:focus + .focus {
   border: 2px solid var(--highlightInput);
   color: var(--fontColorBody);
 }
+
+
 
 
 /* COMMENT
@@ -2477,6 +2518,10 @@ button:active:before {
     visibility: visible;
     opacity: 1;
   }
+}
+
+#modal {
+  z-index: 4000;
 }
 
 /*
@@ -2828,6 +2873,21 @@ GENERAL SETTINGS
     width: 70%;
     max-width: none;
   }
+
+  /* dropdown */
+  .welcome-welcome {
+    display: flex;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+
+    /* dropdown-items */
+    ul.list-group:nth-child(3) {
+     position: absolute;
+     z-index: 1;
+     width: 110%;
+    }
+
 
   #comment {
     height: 100%;
