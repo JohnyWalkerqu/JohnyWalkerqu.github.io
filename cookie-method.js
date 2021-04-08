@@ -30,83 +30,87 @@ var $tracking_cookie_path = false;   // eg. "/"
 // console.log('script is loaded');
 // setTimeout(function() {
   window.addEventListener("load", function () {
-      window.cookieconsent.initialise({
-          "palette": {
-              "popup": {
-                  "background": "#f8f8f8"
-              },
-          },
-          "cookie": {
-              "expiryDays": 60
-           },
-          "type": "opt-in",
-          "content": {
-              "header": "Cookie-Hinweis",
-              "message": "Wir verwenden Tracking-Cookies, um unsere Website stetig zu verbessern sowie für anonymisierte Nutzungsstatistiken.",
-              "allow": "Einverstanden",
-              "deny": "Ablehnen",
-              "link": "Mehr erfahren",
-              "href": "/privacy.html",
-              "policy": 'Cookie Einstellungen'
-          },
-          onPopupOpen: function () {
-              document.body.classList.add("cookieconsent-banner-opened");
-          },
-          onPopupClose: function () {
-              document.body.classList.remove("cookieconsent-banner-opened");
-          },
-          onInitialise: function (status) {
-              var type = this.options.type;
-              var didConsent = this.hasConsented();
-              if (type == 'opt-in' && didConsent) {
-                  // enable cookies
-                  embedTrackingCode();
-              }
-              if (type == 'opt-out' && !didConsent) {
-                  // disable cookies
-                  deleteGACookies();
-              }
-              if (type == 'opt-in' && !didConsent) {
-                  // disable cookies
-                  deleteGACookies();
-              }
-          },
-          onStatusChange: function (status, chosenBefore) {
-              var type = this.options.type;
-              var didConsent = this.hasConsented();
-              if (type == 'opt-in' && didConsent) {
-                  // enable cookies
-                  embedTrackingCode();
-              }
-              if (type == 'opt-in' && !didConsent) {
-                  // disable cookies
-                  deleteGACookies();
-                  location.reload();
-              }
-              if (type == 'opt-out' && !didConsent) {
-                  // disable cookies
-                  deleteGACookies();
-                  location.reload();
-              }
-          },
-          onRevokeChoice: function () {
-              var type = this.options.type;
-              if (type == 'opt-in') {
-                  // disable cookies
+    // Transition added (fade in/out)
+    cookieconsent.hasTransition;
 
-              }
-              if (type == 'opt-out') {
-                  // enable cookies
-                  embedTrackingCode();
-              }
-          },
-      })
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#f8f8f8"
+            },
+        },
+        "cookie": {
+            "expiryDays": 60
+         },
+
+        "type": "opt-in",
+        "content": {
+            "header": "Cookie-Hinweis",
+            "message": "Wir verwenden Tracking-Cookies, um unsere Website stetig zu verbessern sowie für anonymisierte Nutzungsstatistiken.",
+            "allow": "Einverstanden ",
+            "deny": "Ablehnen",
+            "link": "Mehr erfahren;",
+            "href": "/privacy.html",
+            "policy": 'Cookie Einstellungen',
+            "target": "_blank"
+        },
+        onPopupOpen: function () {
+            document.body.classList.add("cookieconsent-banner-opened");
+        },
+        onPopupClose: function () {
+            document.body.classList.remove("cookieconsent-banner-opened");
+        },
+        onInitialise: function (status) {
+            var type = this.options.type;
+            var didConsent = this.hasConsented();
+            if (type == 'opt-in' && didConsent) {
+                // enable cookies
+                embedTrackingCode();
+            }
+            if (type == 'opt-out' && !didConsent) {
+                // disable cookies
+                deleteGACookies();
+            }
+            if (type == 'opt-in' && !didConsent) {
+                // disable cookies
+                deleteGACookies();
+            }
+        },
+        onStatusChange: function (status, chosenBefore) {
+            var type = this.options.type;
+            var didConsent = this.hasConsented();
+            if (type == 'opt-in' && didConsent) {
+                // enable cookies
+                embedTrackingCode();
+            }
+            if (type == 'opt-in' && !didConsent) {
+                // disable cookies
+                deleteGACookies();
+                location.reload();
+            }
+            if (type == 'opt-out' && !didConsent) {
+                // disable cookies
+                deleteGACookies();
+                location.reload();
+            }
+        },
+        onRevokeChoice: function () {
+            var type = this.options.type;
+            if (type == 'opt-in') {
+                // disable cookies
+
+            }
+            if (type == 'opt-out') {
+                // enable cookies
+                embedTrackingCode();
+            }
+        },
+    })
   });
 // }, 4000);
 
 
 /* –  – NO FUTHER SETTINGS NEEDED BELOW THIS LINE –  – */
-
 function embedTrackingCode(){
     // add <script> to head
     var gascript = document.createElement("script");
@@ -120,7 +124,7 @@ function embedTrackingCode(){
     gtag('js', new Date());
     gtag('config', $tracking_id, { 'anonymize_ip': true });
 
-    // console.log('Google Analytics Tracking enabled')
+    // console.log('Google Analytics Tracking osano enabled')
 }
 
 

@@ -214,6 +214,12 @@ h5 {
   font-weight: unset;
 }
 
+/* inserts first content under the nav bar
+   if necessary */
+.heading-top {
+  margin-top: 15vh;
+}
+
 p {
   font-size: var(--fontSizeP);
 }
@@ -2011,6 +2017,10 @@ Animation
 .container {
   display: flex;
   flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .form-own {
@@ -2057,6 +2067,7 @@ section {
   margin-left: 5%;
   margin-right: 5%;
   padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 /* seperate contact from Text before */
@@ -2687,6 +2698,12 @@ header.privacy {
 
 .nav-privacy-items {
   width: 66.7%;
+}
+
+/* change card design */
+.card-privacy {
+  background-color: floralwhite;
+  border: none;
 }
 
 

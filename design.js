@@ -270,56 +270,7 @@ checkbox.addEventListener('change', function() {
 });
 
 
-
-// submit.addEventListener('click', () => {
-//
-//   var firstname = document.getElementById("firstname").value;
-//   var surname = document.getElementById("surname").value;
-//   var adress = document.getElementById("adress").value;
-//   var email = document.getElementById("email").value;
-//   var option = document.getElementById("label").innerText;
-//   var comment = document.getElementById("comment").value;
-//
-//   if (validation()) {
-//     // Calling validation function
-//     // form.submit(); //form submission
-//
-//     // alert(" firstname : " + firstname +
-//     //       " n surname : " + surname +
-//     //       " n zip-code : " + adress +
-//     //       " n Email : " + email +
-//     //       " n Option : " + option +
-//     //       " n Form Id : " + form.getAttribute("id") + "nn Form Submitted Successfully......");
-//   }
-//
-//   // Name and Email validation
-//   function validation() {
-//     // var marketing = document.getElementById('marketing').value;
-//     var emailReg = mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-//
-//     if (firstname === ''  || surname === '' || email === '') {
-//       alert('Please fill all fields!');
-//       return false;
-//     }
-//     else if (!(email).match(emailReg)) {
-//       alert('Invalid Email!');
-//       return false;
-//     }
-//     else {
-//       // console.log('trigger modal');
-//       var contactInfo = document.getElementById('insert-contact-info');
-//       contactInfo.innerHTML = "<p>Vorname: " + firstname + "</p> \
-//                               <p>Nachname: " + surname + "</p> \
-//                               <p>Postleitzahl: " + adress + "</p> \
-//                               <p>Email: " + email + "</p> \
-//                               <p>Auswahl: " + option + "</p> \
-//                               <p>Kommentar: " + comment + "</p>";
-//
-//       $('#modal').modal('toggle');
-//       return true;
-//     }
-//   }
-// });
+// send the CONTACT FORM
 function send() {
   console.log('submit was clicked');
   var firstname = document.getElementById("firstname").value;
@@ -356,7 +307,7 @@ function send() {
       return false;
     }
     else {
-      // console.log('trigger modal');
+      // gives user a notifaction/modal of success
       var contactInfo = document.getElementById('insert-contact-info');
       contactInfo.innerHTML = "<p>Vorname: " + firstname + "</p> \
                               <p>Nachname: " + surname + "</p> \

@@ -704,12 +704,10 @@
           </div>
 
           <div class="form-own justy-align">
-            <!-- <form id="contact-form" class="validate-form" name="contact-form"
-                    method="post" action="mailto:info@cube-manufaktur.com?subject=Contact%20Form%20on%20Cube-Manufaktur.com"
-                    enctype="text/plain"> -->
             <form id="contact-form" class="validate-form" name="contact-form"
-                  method="post"
+                  method="POST"
                   action="mailto:info@cube-manufaktur.com?subject=Kontaktformular%20on%20Cube-Manufaktur.com" enctype="text/plain">
+
                   <!-- Input Vorname -->
               <div class="group validate-input firstname"
                       data-validate = "Firstname is required">
@@ -763,8 +761,8 @@
 
               <ul class="validate-input welcome-welcome justy-flex">
                 <li class="dropdown">
-                  <input id="o1" class="hide" type="checkbox">
-                  <label id="label" name="option" for="o1" class="welcome-label option-unselected">Auswahl</label>
+                  <input id="o1" class="hide" name="dropwdown" type="checkbox">
+                  <label id="label" name="dropdown" for="o1" class="welcome-label option-unselected">Auswahl</label>
                   <ul class="list-group dropdown-list welcome-child">
                     <li class="list-group-item" value="schreinereiWalk">Schreinerei Walk</li>
                     <li class="list-group-item" value="campManWue">Campermanufaktur wue</li>
